@@ -12,9 +12,18 @@ int main ()
 {
     char secreta[100], secreta2[100], input, chutes[100];
     int vida = 5, i = 0, perdeu = 1, k = 0;
-    scanf("%[^\n]s", secreta); strcpy(secreta2, secreta);
+    scanf("%[^\n]s", secreta);
+    for (i = 0 ; i < strlen(secreta) ; i++)
+    {
+        if ( secreta[i] >= 97 && secreta[i] <= 122 )
+            secreta[i] -= 32;
+    }
+    strcpy(secreta2, secreta);
     for (i = 0 ; i < strlen(secreta2) ; i ++)
-        secreta2[i] = '_';
+    {
+        if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
+            secreta2[i] = '_';
+    }
     while (i < 1000) //limpar tela. melhorar talvez?
     {
         printf("\n"); i++;
@@ -29,6 +38,8 @@ int main ()
         printf("\nVoce ganhou!\n"); break;
     }
     printf("\nInsira a letra: \n"); scanf(" %c", &input);
+    if (input >= 97 && input <= 122)
+        input-=32;
     chutes[k] = input;
     for (i = 0 ; i < strlen(secreta2) ; i++)
     {
