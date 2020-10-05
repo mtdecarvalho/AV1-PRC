@@ -1,7 +1,10 @@
 ////////////////////////////////////////////////
 // 3- Faça um programa que leia uma frase e coloque a primeira letra de cada palavra em maiuscula e as 
 //   demais letras em minuscula
+//  asass123asdasd quero-quero.MARIA
+//  Asass123Asdasd Quero-Quero.Maria
 ///////////////////////////////////////////////
+
 #include <stdio.h>
 #include <string.h>
 
