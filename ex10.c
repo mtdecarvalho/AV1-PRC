@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define tammax 100
+
 int ehvalido ( char a[] )
 {
     int i = 0, k = 0;
@@ -22,13 +24,14 @@ int ehvalido ( char a[] )
 
 int main ()
 {
-    char secreta[100], secreta2[100], input, chutes[100], lixo, cont;
+    char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
     int vida = 5, i = 0, perdeu = 1, k = 0;
     do 
     {
-        printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); lixo = getchar();
+        k = 0; vida = 5;
+        printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); while ((getchar()) != '\n');
         while ( ehvalido(secreta) != 1)
-            {   printf("Frase invalida.\n"); scanf("%[^\n]s", secreta); lixo = getchar();   }
+            {   printf("Frase invalida.\n"); scanf("%[^\n]s", secreta); while ((getchar()) != '\n'); }
         for (i = 0 ; i < strlen(secreta) ; i++)
         {
             if ( secreta[i] >= 97 && secreta[i] <= 122 )
@@ -43,14 +46,12 @@ int main ()
         {   printf("\n"); i++;  }
         do
         {
-            printf("\nVidas: %d"
-                    "\tChutes: %s\n\n", vida, chutes);
+            printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
             printf("\t%s\n", secreta2);
-            if (strcmp(secreta2, secreta) == 0)
-            {
-                printf("\nVoce ganhou!\n"); break;
-            }
-            printf("\nInsira a letra: "); scanf("%c", &input); lixo = getchar();
+            printf("\nInsira a letra (caso mais de uma seja informada, apenas a primeira eh considerada)\n"); scanf("%c", &input);
+            while ((getchar()) != '\n');
+            for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
+               printf("\n");
             if (input >= 97 && input <= 122)
                 input-=32;
             chutes[k] = input;
@@ -62,10 +63,16 @@ int main ()
             if (perdeu == 1)
                 vida-=1;
             perdeu = 1; k++;
-        } while (vida > 0);
-        if (vida == 0)
-            puts("Voce perdeu.");
-        printf("\nFim de jogo. Jogar novamente? [s / n]\n"); scanf("%c", &cont); lixo = getchar();
+        } while (vida > 0 && strcmp(secreta2, secreta) != 0);
+        printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
+        printf("\t%s\n", secreta2);
+        memset(chutes, 0, sizeof chutes);
+        switch (vida)
+        {
+            case 0: puts("\nVoce perdeu."); break;
+            default: puts("\nVoce ganhou!"); break;
+        }
+        printf("\nFim de jogo. Jogar novamente? [s / n]\n"); scanf(" %c", &cont); while ((getchar()) != '\n');
     } while (cont == 's' || cont == 'S');
     return 0;
 }
