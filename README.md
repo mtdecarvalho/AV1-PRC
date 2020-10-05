@@ -10,9 +10,9 @@ Ele consideraria uma palavra separa por pontuação (.,- etc) como duas palavras
 
 ex06 = 100% = 0 bugs (?)
 
-ex08 = 90%
+ex10 = 95% ##OPCIONAL
 
-ex10 = 80% ##OPCIONAL
+ex08 = 90%
 
 ex07 = 40%
 
