@@ -12,7 +12,7 @@ ex06 = 100% = 0 bugs (?)
 
 ex08 = 90%
 
-ex10 = 75% ##OPCIONAL
+ex10 = 80% ##OPCIONAL
 
 ex07 = 40%
 
