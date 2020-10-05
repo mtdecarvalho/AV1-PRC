@@ -12,7 +12,7 @@ int main ()
 {
     char secreta[100], secreta2[100], input, chutes[100];
     int vida = 5, i = 0, perdeu = 1, k = 0;
-    scanf("%[^\n]s", secreta);
+    printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta);
     for (i = 0 ; i < strlen(secreta) ; i++)
     {
         if ( secreta[i] >= 97 && secreta[i] <= 122 )
@@ -34,7 +34,7 @@ int main ()
     {
         printf("\nVoce ganhou!\n"); break;
     }
-    printf("\nInsira a letra: \n"); scanf(" %c", &input);
+    printf("\nInsira a letra: "); scanf(" %c", &input);
     if (input >= 97 && input <= 122)
         input-=32;
     chutes[k] = input;
