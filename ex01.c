@@ -46,5 +46,4 @@ int main ()
         printf("Deseja continuar? [s / n] "); scanf(" %c", &k); //checa condicao de continuar e consome o \n no buffer
     } while (k == 's' || k == 'S');
     return 0;
-    
 }
