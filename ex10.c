@@ -26,12 +26,33 @@ int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
     int vida = 5, i = 0, perdeu = 1, k = 0;
-    do 
+    while (1) 
     {
         k = 0; vida = 5;
+        do
+        {
+            printf("\n\tBem vindo ao jogo da forca!\n\n"
+                    "\t| 1 | Iniciar o jogo.\n"
+                    "\t| 2 | Mostrar regras.\n"
+                    "\t| 0 | Encerrar programa.\n");
+            scanf("%c", &lixo); while ((getchar()) != '\n');
+            switch (lixo)
+            {
+                case '2':
+                printf("\tRegras:\n"
+                    "1. A forca nao faz distincao entre letras maiusculas e minusculas.\n"
+                    "2. A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
+                    "3. Sera permitido apenas uma letra por chute. No caso de mais de uma letra ser informada, a primeira eh considerada.\n");
+                break;
+                case '1': break;
+                case '0': return 0; // Retirar?
+            }
+        }
+        while (lixo != '1');
+
         printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); while ((getchar()) != '\n');
         while ( ehvalido(secreta) != 1)
-            {   printf("Frase invalida.\n"); scanf("%[^\n]s", secreta); while ((getchar()) != '\n'); }
+            {   printf("Frase invalida. Tente novamente: "); scanf("%[^\n]s", secreta); while ((getchar()) != '\n'); }
         for (i = 0 ; i < strlen(secreta) ; i++)
         {
             if ( secreta[i] >= 97 && secreta[i] <= 122 )
@@ -42,8 +63,10 @@ int main ()
             if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
                 secreta2[i] = '_';
         }
-        while (i < 1000) //limpar tela. melhorar talvez?
-        {   printf("\n"); i++;  }
+
+        for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
+            printf("\n");
+
         do
         {
             printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
@@ -51,7 +74,7 @@ int main ()
             printf("\nInsira a letra (caso mais de uma seja informada, apenas a primeira eh considerada)\n"); scanf("%c", &input);
             while ((getchar()) != '\n');
             for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
-               printf("\n");
+            printf("\n");
             if (input >= 97 && input <= 122)
                 input-=32;
             chutes[k] = input;
@@ -72,7 +95,7 @@ int main ()
             case 0: puts("\nVoce perdeu."); break;
             default: puts("\nVoce ganhou!"); break;
         }
-        printf("\nFim de jogo. Jogar novamente? [s / n]\n"); scanf(" %c", &cont); while ((getchar()) != '\n');
-    } while (cont == 's' || cont == 'S');
-    return 0;
+        printf("\nFim de jogo.\n");
+    }
+    //return 0;
 }

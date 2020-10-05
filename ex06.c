@@ -18,20 +18,20 @@ int main ()
     double val;
     char invalido, lixo;
     char cardapio[905] =
-           (" __________________________________________\n"
-           "|    BEM-VINDO AO CARVALHO'S FOODTRUCK!    |\n"
-           "|------------------------------------------|\n"
-           "| Nº|          LANCHE            |  PREÇO  |\n"
-           "|------------------------------------------|\n"
-           "| 1 |       Misto Quente         | R$ 4.50 |\n"
-           "| 2 |       Queijo Quente        | R$ 4.00 |\n"
-           "| 3 |       Hamburguer           | R$ 6.00 |\n"
-           "| 4 |       Eggburguer           | R$ 7.00 |\n"
-           "| 5 |       Podrão               | R$ 9.00 |\n"
-           "|------------------------------------------|\n"
-           "| 9 |       Mostrar cardapio               |\n"
-           "| 0 |       Encerrar programa              |\n" 
-           "|__________________________________________|");
+    (" __________________________________________\n"
+    "|    BEM-VINDO AO CARVALHO'S FOODTRUCK!    |\n"
+    "|------------------------------------------|\n"
+    "| Nº|          LANCHE            |  PREÇO  |\n"
+    "|------------------------------------------|\n"
+    "| 1 |       Misto Quente         | R$ 4.50 |\n"
+    "| 2 |       Queijo Quente        | R$ 4.00 |\n"
+    "| 3 |       Hamburguer           | R$ 6.00 |\n"
+    "| 4 |       Eggburguer           | R$ 7.00 |\n"
+    "| 5 |       Podrão               | R$ 9.00 |\n"
+    "|------------------------------------------|\n"
+    "| 9 |       Mostrar cardapio               |\n"
+    "| 0 |       Encerrar programa              |\n" 
+    "|__________________________________________|");
     puts(cardapio);
     do
     {
@@ -41,10 +41,6 @@ int main ()
             while ((lixo = getchar()) != '\n' && lixo != EOF);
             printf("\nValor invalido. Insira um numero valido: ");
         }
-        //if (scanf("%d", &numpedido) == 0)
-        //{
-        //    do { printf("Insira um numero valido.\n");  invalido = getchar(); } while ( !isdigit(invalido) ); ungetc(invalido, stdin);
-        //}
         switch(numpedido)
         { 
             case 1: val = 4.50; printf("\nInsira a quantidade de seu pedido: "); scanf("%d", &qtdpedido);
