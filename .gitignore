@@ -1,7 +1,3 @@
-# Source compilado #
-###################
-*.c
-
 # Packages #
 ############
 *.7z
