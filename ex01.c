@@ -1,7 +1,6 @@
 //1- faça um programa para ler um numero inteiro positivo e informe se ele é primo
 //   assumimos que para este exercicio que o numero 1 não é primo.
 //   todos os outros numeros primos são numeros que so tem dois divisores 1 e ele mesmo.
-//teste
 
 #include <stdio.h>
 #include <stdlib.h>
