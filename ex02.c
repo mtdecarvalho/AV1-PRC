@@ -19,7 +19,6 @@ int main ()
             if (frase1[i] >= 65 && frase1[i] <= 90)
                 { frase1[i] += 32; i--; }
         }
-        puts(frase1);
         strcpy(frase2, frase1); // copiando a frase para comparacao
         tam = strlen(frase2); 
         for (i = 0, k = tam-1 ; i < tam/2 ; i++, k--)
