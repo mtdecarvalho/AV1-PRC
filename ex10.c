@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #define tammax 100
 
