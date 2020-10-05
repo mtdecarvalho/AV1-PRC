@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main ()
 {
@@ -30,6 +31,11 @@ int main ()
         for(i = 0; i < strlen(palavra) ; i++)
         {
             if (i == 0)
+            {
+                if (palavra[i] >= 97 && palavra[i] <= 122)
+                    palavra[i]-=32;
+            }
+            else if ( !isalpha(palavra[i-1]) )
             {
                 if (palavra[i] >= 97 && palavra[i] <= 122)
                     palavra[i]-=32;
