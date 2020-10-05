@@ -17,17 +17,14 @@ int main ()
     {
         if ( secreta[i] >= 97 && secreta[i] <= 122 )
             secreta[i] -= 32;
-    }
-    strcpy(secreta2, secreta);
+    }   strcpy(secreta2, secreta);
     for (i = 0 ; i < strlen(secreta2) ; i ++)
     {
         if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
             secreta2[i] = '_';
     }
     while (i < 1000) //limpar tela. melhorar talvez?
-    {
-        printf("\n"); i++;
-    }
+    {   printf("\n"); i++;  }
     do
     {
     printf("\nVidas: %d"
