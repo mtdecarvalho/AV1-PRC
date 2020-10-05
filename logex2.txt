@@ -1,0 +1,501 @@
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |afa| |afa|
+segundo loop: afa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aia| |aia|
+segundo loop: aia
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ala| |ala|
+segundo loop: ala
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ama| |ama|
+segundo loop: ama
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ana| |ana|
+segundo loop: ana
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ana| |ana|
+segundo loop: ana
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |anilina| |anilina|
+segundo loop: anilina
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |arara| |arara|
+segundo loop: arara
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |asa| |asa|
+segundo loop: asa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ata| |ata|
+segundo loop: ata
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ele| |ele|
+segundo loop: ele
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |esse| |esse|
+segundo loop: esse
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |mamam| |mamam|
+segundo loop: mamam
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |matam| |matam|
+segundo loop: matam
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |metem| |metem|
+segundo loop: metem
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |mirim| |mirim|
+segundo loop: mirim
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |mussum| |mussum|
+segundo loop: mussum
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oco| |oco|
+segundo loop: oco
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |omississimo| |omississimo|
+segundo loop: omississimo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |osso| |osso|
+segundo loop: osso
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ovo| |ovo|
+segundo loop: ovo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |racificar| |racificar|
+segundo loop: racificar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |radar| |radar|
+segundo loop: radar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |raiar| |raiar|
+segundo loop: raiar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ralar| |ralar|
+segundo loop: ralar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ramar| |ramar|
+segundo loop: ramar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rapar| |rapar|
+segundo loop: rapar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rasar| |rasar|
+segundo loop: rasar
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |reger| |reger|
+segundo loop: reger
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |reler| |reler|
+segundo loop: reler
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |reter| |reter|
+segundo loop: reter
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rever| |rever|
+segundo loop: rever
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |reviver| |reviver|
+segundo loop: reviver
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rir| |rir|
+segundo loop: rir
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rodador| |rodador|
+segundo loop: rodador
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |sacas| |sacas|
+segundo loop: sacas
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |saias| |saias|
+segundo loop: saias
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |salas| |salas|
+segundo loop: salas
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |socos| |socos|
+segundo loop: socos
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |sos| |sos|
+segundo loop: sos
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |romametemamor| |romametemamor|
+segundo loop: romametemamor
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |socorrammesubinoonibusemmarrocos| |socorrammesubinoonibusemmarrocos|
+segundo loop: socorrammesubinoonibusemmarrocos
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amalanadanalama| |amalanadanalama|
+segundo loop: amalanadanalama
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |agramaeamarga| |agramaeamarga|
+segundo loop: agramaeamarga
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aritasobrevovoverbosatira| |aritasobrevovoverbosatira|
+segundo loop: aritasobrevovoverbosatira
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |olemaracujacajucaramelo| |olemaracujacajucaramelo|
+segundo loop: olemaracujacajucaramelo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |rirobreveverborir| |rirobreveverborir|
+segundo loop: rirobreveverborir
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |anotaramadatadamaratona| |anotaramadatadamaratona|
+segundo loop: anotaramadatadamaratona
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amaeteama| |amaeteama|
+segundo loop: amaeteama
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |otocomemocoto| |otocomemocoto|
+segundo loop: otocomemocoto
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |atorredaderrota| |atorredaderrota|
+segundo loop: atorredaderrota
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |otimosoeuqueosomito| |otimosoeuqueosomito|
+segundo loop: otimosoeuqueosomito
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ogaloamaolago| |ogaloamaolago|
+segundo loop: ogaloamaolago
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oloboamaobolo| |oloboamaobolo|
+segundo loop: oloboamaobolo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |megabobagem| |megabobagem|
+segundo loop: megabobagem
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |acararajadadajararaca| |acararajadadajararaca|
+segundo loop: acararajadadajararaca
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amardadrama| |amardadrama|
+segundo loop: amardadrama
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |asacadadacasa| |asacadadacasa|
+segundo loop: asacadadacasa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aposasopa| |aposasopa|
+segundo loop: aposasopa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |luzazul| |luzazul|
+segundo loop: luzazul
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ameopoema| |ameopoema|
+segundo loop: ameopoema
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |adamaadmirouorimdaamada| |adamaadmirouorimdaamada|
+segundo loop: adamaadmirouorimdaamada
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |adivaemargelalegrameavida| |adivaemargelalegrameavida|
+segundo loop: adivaemargelalegrameavida
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ocasodadrogadagordadosaco| |ocasodadrogadagordadosaco|
+segundo loop: ocasodadrogadagordadosaco
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |zedelimarualauramiledez| |zedelimarualauramiledez|
+segundo loop: zedelimarualauramiledez
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |sairamotioeoitomarias| |sairamotioeoitomarias|
+segundo loop: sairamotioeoitomarias
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |assimaaiaiaamissa| |assimaaiaiaamissa|
+segundo loop: assimaaiaiaamissa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |adiasadatadasaida| |adiasadatadasaida|
+segundo loop: adiasadatadasaida
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |acudacadeladaledacaduca| |acudacadeladaledacaduca|
+segundo loop: acudacadeladaledacaduca
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ailimafalou‚Äúolafamilia‚Äù| |ailimafalou‚Äúolafamilia‚Äù|
+segundo loop: ùÄ‚ailimafaloúÄ‚uolafamilia
+Nao eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |apatetaamaatetapa| |apatetaamaatetapa|
+segundo loop: apatetaamaatetapa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |eateopapapoetae| |eateopapapoetae|
+segundo loop: eateopapapoetae
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |lacobacanaparapanacabocal| |lacobacanaparapanacabocal|
+segundo loop: lacobacanaparapanacabocal
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |agordaamaadroga| |agordaamaadroga|
+segundo loop: agordaamaadroga
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |lavaesseaval| |lavaesseaval|
+segundo loop: lavaesseaval
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |solucomesemoculos| |solucomesemoculos|
+segundo loop: solucomesemoculos
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |missaeassim| |missaeassim|
+segundo loop: missaeassim
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |nosligouogilson| |nosligouogilson|
+segundo loop: nosligouogilson
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |atetimedemiteta| |atetimedemiteta|
+segundo loop: atetimedemiteta
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ireneri| |ireneri|
+segundo loop: ireneri
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |olagalo| |olagalo|
+segundo loop: olagalo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aibia| |aibia|
+segundo loop: aibia
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aliladodalila| |aliladodalila|
+segundo loop: aliladodalila
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amoraroma| |amoraroma|
+segundo loop: amoraroma
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ateopoeta| |ateopoeta|
+segundo loop: ateopoeta
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ladrapardal| |ladrapardal|
+segundo loop: ladrapardal
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |livredopodervil| |livredopodervil|
+segundo loop: livredopodervil
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oceusueco| |oceusueco|
+segundo loop: oceusueco
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |serbelolebres| |serbelolebres|
+segundo loop: serbelolebres
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |lavoueuemmeueuoval| |lavoueuemmeueuoval|
+segundo loop: lavoueuemmeueuoval
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ecovejohojevoce| |ecovejohojevoce|
+segundo loop: ecovejohojevoce
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |omuroreverorumo| |omuroreverorumo|
+segundo loop: omuroreverorumo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oravaoavaro| |oravaoavaro|
+segundo loop: oravaoavaro
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |adanielaamaaleinada| |adanielaamaaleinada|
+segundo loop: adanielaamaaleinada
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |adrogadodoteetododagorda| |adrogadodoteetododagorda|
+segundo loop: adrogadodoteetododagorda
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |alupapula| |alupapula|
+segundo loop: alupapula
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amissepessima| |amissepessima|
+segundo loop: amissepessima
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |aritasatira| |aritasatira|
+segundo loop: aritasatira
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |acataodanadoeodanadoataca| |acataodanadoeodanadoataca|
+segundo loop: acataodanadoeodanadoataca
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ajudemeduja| |ajudemeduja|
+segundo loop: ajudemeduja
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |abasedotetodesaba| |abasedotetodesaba|
+segundo loop: abasedotetodesaba
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |evaasseessaave| |evaasseessaave|
+segundo loop: evaasseessaave
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |marujossojuram| |marujossojuram|
+segundo loop: marujossojuram
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |omitoeotimo| |omitoeotimo|
+segundo loop: omitoeotimo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |otrotetorto| |otrotetorto|
+segundo loop: otrotetorto
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |otrecocerto| |otrecocerto|
+segundo loop: otrecocerto
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |otrotetorto| |otrotetorto|
+segundo loop: otrotetorto
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ovoodoovo| |ovoodoovo|
+segundo loop: ovoodoovo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |odiododoido| |odiododoido|
+segundo loop: odiododoido
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ohnossasluvasavulsassonho| |ohnossasluvasavulsassonho|
+segundo loop: ohnossasluvasavulsassonho
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oiratootario| |oiratootario|
+segundo loop: oiratootario
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |arualaura| |arualaura|
+segundo loop: arualaura
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |atoidiota| |atoidiota|
+segundo loop: atoidiota
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |arararara| |arararara|
+segundo loop: arararara
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oteudueto| |oteudueto|
+segundo loop: oteudueto
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |ababababa| |ababababa|
+segundo loop: ababababa
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |pivetevip| |pivetevip|
+segundo loop: pivetevip
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oataripiratao| |oataripiratao|
+segundo loop: oataripiratao
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |secoderaivacoloconocolocaviaredoces| |secoderaivacoloconocolocaviaredoces|
+segundo loop: secoderaivacoloconocolocaviaredoces
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |amoomaseromametemamoresamooma| |amoomaseromametemamoresamooma|
+segundo loop: amoomaseromametemamoresamooma
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |meveseapaneladamocaedeacomadalenapaesevem| |meveseapaneladamocaedeacomadalenapaesevem|
+segundo loop: meveseapaneladamocaedeacomadalenapaesevem
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |luzarocelinaanamoradadomanuelleunamodadaromanaanilecorazul| |luzarocelinaanamoradadomanuelleunamodadaromanaanilecorazul|
+segundo loop: luzarocelinaanamoradadomanuelleunamodadaromanaanilecorazul
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oduplopodotrotetorpedepotromeuquemortopedeprotetortodopolpudo| |oduplopodotrotetorpedepotromeuquemortopedeprotetortodopolpudo|
+segundo loop: oduplopodotrotetorpedepotromeuquemortopedeprotetortodopolpudo
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: |oromanoacataamoresadamasamadaseromaatacaonamoro| |oromanoacataamoresadamasamadaseromaatacaonamoro|
+segundo loop: oromanoacataamoresadamasamadaseromaatacaonamoro
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 
+primeiro loop: || ||
+segundo loop: 
+Eh palindroma.
+Insira a frase\palavra a ser analisada: 

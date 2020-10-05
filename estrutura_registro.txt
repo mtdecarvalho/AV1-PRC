@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+typedef struct {
+   char nome[30];
+   int  semestre, ano;
+   float media;
+} TAluno;
+
+
+int comparador(const void *pa, const void *pb) {
+   TAluno a = *(TAluno*)pa;
+   TAluno b = *(TAluno*)pb;
+   
+   return ( strcmp(a.nome, b.nome) );
+}
+
+int compMedia(const void *pa, const void *pb) {
+   TAluno a = *(TAluno*)pa;
+   TAluno b = *(TAluno*)pb;
+   
+   return ( a.media-b.media );
+}
+
+int compAnoSem(const void *pa, const void *pb) {
+   TAluno a = *(TAluno*)pa;
+   TAluno b = *(TAluno*)pb;
+   
+   if (a.ano==b.ano)
+      if (a.semestre==b.semestre)
+        return strcmp(a.nome, b.nome);
+      else
+        return ( a.semestre-b.semestre );
+   else 
+      return ( a.ano-b.ano );
+}
+
+//sub-rotina 
+void ler(TAluno v[], int qtd)
+{
+    int i;
+    for(i=0; i<qtd; i++)
+	   scanf("%s%d%d%f\n", v[i].nome, &v[i].semestre, &v[i].ano, &v[i].media);
+}
+
+//sub-rotina 
+void mostrar(TAluno v[], int qtd)
+{
+    int i;
+    for(i=0; i<qtd; i++)
+	   printf("%-20s %i %i %05.2f\n",v[i].nome, v[i].semestre, v[i].ano, v[i].media);
+	printf("\n\n\n");
+}
+
+int main(void) {
+	TAluno alunos[1000];
+	int N,K,i;
+	TAluno x;
+
+	scanf("%d%d",&N,&K);
+	
+	ler(alunos,N);
+
+	qsort(alunos, N, sizeof(TAluno), comparador);
+    mostrar(alunos,N);	
+	
+	qsort(alunos, N, sizeof(TAluno), compMedia);
+    mostrar(alunos,N);	
+
+	qsort(alunos, N, sizeof(TAluno), compAnoSem);
+    mostrar(alunos,N);	
+
+	
+	return 0;
+}
+
