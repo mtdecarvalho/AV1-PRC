@@ -48,6 +48,7 @@ int main ()
     perdeu = 1; k++;
     } while (vida > 0);
     if (vida == 0)
-        puts("Game Over.");
+        puts("Voce perdeu.");
+    puts("Fim de jogo.");
     return 0;
 }
