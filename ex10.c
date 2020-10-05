@@ -32,9 +32,11 @@ int main ()
         do
         {
             printf("\n\tBem vindo ao jogo da forca!\n\n"
-                    "\t| 1 | Iniciar o jogo.\n"
-                    "\t| 2 | Mostrar regras.\n"
-                    "\t| 0 | Encerrar programa.\n");
+                    "\t--------------------------\n"
+                    "\t| 1 | Iniciar o jogo.    |\n"
+                    "\t| 2 | Mostrar regras.    |\n"
+                    "\t| 0 | Encerrar programa. |\n"
+                    "\t--------------------------\n");
             scanf("%c", &lixo); while ((getchar()) != '\n');
             switch (lixo)
             {
