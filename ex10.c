@@ -32,20 +32,22 @@ int main ()
         k = 0; vida = 5;
         do
         {
-            printf("\n\tBem vindo ao jogo da forca!\n\n"
-                    "\t--------------------------\n"
-                    "\t| 1 | Iniciar o jogo.    |\n"
-                    "\t| 2 | Mostrar regras.    |\n"
-                    "\t| 0 | Encerrar programa. |\n"
-                    "\t--------------------------\n");
+            printf(
+            "\t###############################\n"
+            "\t# Bem vindo ao jogo da forca! #\n"
+            "\t###############################\n"
+            "\t# 1 # Iniciar o jogo          #\n"
+            "\t# 2 # Mostrar regras          #\n"
+            "\t# 0 # Encerrar programa       #\n"
+            "\t###############################\n");
             scanf("%c", &lixo); while ((getchar()) != '\n');
             switch (lixo)
             {
                 case '2':
-                printf("\tRegras:\n"
+                printf("\t\tRegras:\n"
                     "1. A forca nao faz distincao entre letras maiusculas e minusculas.\n"
                     "2. A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
-                    "3. Sera permitido apenas uma letra por chute. No caso de mais de uma letra ser informada, a primeira eh considerada.\n");
+                    "3. Sera permitido apenas uma letra por chute. No caso de mais de uma letra ser informada, apenas a primeira eh considerada.\n\n");
                 break;
                 case '1': break;
                 case '0': return 0; // Retirar?
@@ -74,7 +76,7 @@ int main ()
         {
             printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
             printf("\t%s\n", secreta2);
-            printf("\nInsira a letra (caso mais de uma seja informada, apenas a primeira eh considerada)\n"); scanf("%c", &input);
+            printf("\nInsira a letra:\n"); scanf("%c", &input);
             while ((getchar()) != '\n');
             for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
             printf("\n");
@@ -98,7 +100,7 @@ int main ()
             case 0: puts("\nVoce perdeu."); break;
             default: puts("\nVoce ganhou!"); break;
         }
-        printf("\nFim de jogo.\n");
+        printf("\nFim de jogo.\n\n");
     }
     //return 0;
 }
