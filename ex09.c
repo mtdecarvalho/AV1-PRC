@@ -7,7 +7,38 @@
 
 #include <stdio.h>
 
+#define max 100
+
 int main ()
 {
+    int N, i, k;
+    double n[max], media = 0, temp;
+    char cont;
+    do
+    {
+        printf("Insira os valores (ate 100) a serem analisados:\n"
+                "(Para encerrar a leitura, insira 0)\n");
+        for ( i = 0 ; i < 100 ; i++ )
+        {
+            scanf(" %lf", &n[i]); if (n[i] == 0) { i--; N = i; break; }
+        }
+        for (i = 0 ; i <= N ; i++)
+        {
+            for (k = 0; k <= N ; k++)
+                if (n[i] < n[k])
+                {
+                    temp = n[k];    n[k] = n[i];    n[i] = temp;
+                }
+        }
+        k = 0; printf("Extremo 1 %lf Extremo 2 %lf\n", n[0], n[N]);
+        for (i = 0 ; i <= N ; i++)
+        {
+            if ( n[i] > n[0] && n[i] < n[N] )
+            {   media+=n[i]; k++;   printf("%lf\n", media); }
+        }
+        media/=k;
+        printf("A media dos valores sem seus extremos eh %.1lf.\n", media);
+        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &cont);
+    } while (cont == 's' || cont == 'S');
     return 0;
 }
