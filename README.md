@@ -2,11 +2,9 @@
 
 ex01 = 100%
 
-ex02 = 100% - 1 bug
+ex02 = 100%
 
-ex03 = 100% - 0 bugs (?) (melhorar interação com usuario)
-
-Ele consideraria uma palavra separa por pontuação (.,- etc) como duas palavras? perguntar.
+ex03 = 100%
 
 ex06 = 100% = 0 bugs (?)
 
