@@ -10,14 +10,27 @@ typedef struct {
     double n1, n2, media;
 } Taluno;
 
+int ehnum ( char a[] )
+{
+    int i;
+    for (i = 0 ; i < strlen(a) ; i++)
+        if ( !isdigit(a[i]) )
+            return 0;
+    return 1;
+}
+
 //usar fgets() para ler o input, strtok() para separar as entradas e strtof() para converter para float as notas.
 
 int main ()
 {
-    int n, i = 0, notificacao = 0;
+    int n, i = 0, k;
+    char N[10];
     double mediaturma;
     Taluno alunos[100];
-    printf("Insira o numero de alunos a serem registrados: "); scanf("%d", &n);
+    printf("Insira o numero de alunos a serem registrados: "); scanf("%s", N);
+    while (ehnum(N)!=1)
+    {   printf("O valor inserido nao eh um numero valido. Tente novamente: ");  scanf("%s", N);   }
+    n = atoi(N);
     printf("Preencha as proximas %d linhas com os dados dos alunos: \n"
             "Ex: Matheus 10.0 10.0\n", n);
     for (i = 0 ; i < n ; i++)
@@ -37,15 +50,16 @@ int main ()
     mediaturma /= n; printf("%lf\n", mediaturma);
     //for (i = 0 ; i < n ; i ++)
     //{
-        //if (alunos[i].media > mediaturma)
-        //    notificacao = 1;
-        //else
+    //    if (alunos[i].media > mediaturma)
+    //        k = 1;
+    //    else if (i == n-1 && k != 1)
+    //        k = 0;
     //}
-    //if (notificacao == 1)
+    //if (k == 1)
         for (i = 0 ; i < n ; i++)
             if (alunos[i].media > mediaturma)
                 printf("%s\n", alunos[i].nome);
-    //else if (notificacao == 0)
+    //else if (k != 1)
     //    printf("Nenhum aluno possui media maior que a turma.\n");        
     return 0;
 }
