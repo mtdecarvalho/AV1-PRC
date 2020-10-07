@@ -27,18 +27,22 @@ int ehvalido ( char a[] )
 
 void limpartela()
 {
-    #ifdef __linux__
+    #ifdef __unix__
         system("clear");
     #elif _WIN32
+        system("cls");
+    #elif _WIN64
         system("cls");
     #endif
 }
 
 void pausartela()
 {
-    #ifdef __linux__
+    #ifdef __unix__
         system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
     #elif _WIN32
+        system("pause");
+    #elif _WIN64
         system("pause");
     #endif
 }
