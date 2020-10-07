@@ -84,6 +84,7 @@ int main ()
     while (1) 
     {
         k = 0; vida = 5;
+        memset(chutes, 0, strlen(chutes));
 
         do
         {
@@ -138,7 +139,6 @@ int main ()
         
         printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
         printf("\t%s\n", secreta2);
-        memset(chutes, 0, strlen(chutes));
         switch (vida)
         {
             case 0: puts("\nVoce perdeu."); break;
