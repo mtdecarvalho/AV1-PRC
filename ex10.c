@@ -28,6 +28,18 @@ void limpa()
     while ((getchar()) != '\n');
 }
 
+void menu()
+{
+    printf(
+            "\t###############################\n"
+            "\t# Bem vindo ao jogo da forca! #\n"
+            "\t###############################\n"
+            "\t# 1 # Iniciar o jogo          #\n"
+            "\t# 2 # Mostrar regras          #\n"
+            "\t# 0 # Encerrar programa       #\n"
+            "\t###############################\n");
+}
+
 int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
@@ -39,14 +51,7 @@ int main ()
 
         do
         {
-            printf(
-            "\t###############################\n"
-            "\t# Bem vindo ao jogo da forca! #\n"
-            "\t###############################\n"
-            "\t# 1 # Iniciar o jogo          #\n"
-            "\t# 2 # Mostrar regras          #\n"
-            "\t# 0 # Encerrar programa       #\n"
-            "\t###############################\n");
+            menu();
             scanf(" %c", &lixo); limpa();
             switch (lixo)
             {
