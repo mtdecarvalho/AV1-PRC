@@ -51,9 +51,8 @@ void regras()
     "\t# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.                                                       #\n"
     "\t# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.                           #\n"
     "\t# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada. #\n"
-    "\t#############################################################################################################################\n"
-    "\nPressione Enter...\n");
-    limpa();
+    "\t#############################################################################################################################\n");
+    pausartela();
 }
 
 void limpartela()
@@ -62,6 +61,15 @@ void limpartela()
         system("clear");
     #elif _WIN32
         system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __linux__
+        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+    #elif _WIN32
+        system("pause");
     #endif
 }
 
@@ -133,7 +141,7 @@ int main ()
             case 0: puts("\nVoce perdeu."); break;
             default: puts("\nVoce ganhou!"); break;
         }
-        printf("\nFim de jogo.\nPressione Enter...\n"); limpa();
+        printf("\nFim de jogo.\n"); pausartela();
     }
     //return 0;
 }
