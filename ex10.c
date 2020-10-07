@@ -6,6 +6,7 @@
 //         e a Forca nao faz distinção de maiuscula e minuscula
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -30,6 +31,7 @@ void limpa()
 
 void menu()
 {
+    limpartela();
     printf(
             "\t###############################\n"
             "\t# Bem vindo ao jogo da forca! #\n"
@@ -40,9 +42,32 @@ void menu()
             "\t###############################\n");
 }
 
+void regras()
+{
+    limpartela();
+    printf(
+    "\t                                                   # Regras #\n"
+    "\t#############################################################################################################################\n"
+    "\t# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.                                                       #\n"
+    "\t# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.                           #\n"
+    "\t# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada. #\n"
+    "\t#############################################################################################################################\n"
+    "\nPressione Enter...\n");
+    limpa();
+}
+
+void limpartela()
+{
+    #ifdef __linux__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #endif
+}
+
 int main ()
 {
-    char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
+    char secreta[tammax], secreta2[tammax], chutes[tammax], input, j, cont;
     int vida = 5, i = 0, perdeu = 1, k = 0;
 
     while (1) 
@@ -52,20 +77,16 @@ int main ()
         do
         {
             menu();
-            scanf(" %c", &lixo); limpa();
-            switch (lixo)
+            scanf(" %c", &j); limpa();
+            switch (j)
             {
-                case '2':
-                printf("\t\tRegras:\n"
-                    "1. A forca nao faz distincao entre letras maiusculas e minusculas.\n"
-                    "2. A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
-                    "3. Sera permitido apenas uma letra por chute. No caso de mais de uma letra ser informada, apenas a primeira eh considerada.\n\n");
-                break;
+                case '2': regras(); break;
                 case '1': break;
-                case '0': return 0; // Retirar?
+                case '0': limpartela(); return 0; // Retirar?
             }
         }
-        while (lixo != '1');
+        while (j != '1');
+        limpartela();
 
         printf("Insira a frase secreta: "); scanf(" %[^\n]s", secreta); limpa();
         while ( ehvalido(secreta) != 1)
@@ -81,8 +102,7 @@ int main ()
                 secreta2[i] = '_';
         }
 
-        for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
-            printf("\n");
+        limpartela(); //limpar tela. melhorar talvez?
 
         do
         {
@@ -90,8 +110,7 @@ int main ()
             printf("\t%s\n", secreta2);
             printf("\nInsira a letra:\n"); scanf(" %c", &input);
             limpa();
-            for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
-            printf("\n");
+            limpartela(); //limpar tela. melhorar talvez?
             if (input >= 97 && input <= 122)
                 input-=32;
             chutes[k] = input;
@@ -114,7 +133,7 @@ int main ()
             case 0: puts("\nVoce perdeu."); break;
             default: puts("\nVoce ganhou!"); break;
         }
-        printf("\nFim de jogo.\n\n");
+        printf("\nFim de jogo.\nPressione Enter...\n"); limpa();
     }
     //return 0;
 }
