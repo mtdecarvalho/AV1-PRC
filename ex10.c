@@ -32,9 +32,11 @@ int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
     int vida = 5, i = 0, perdeu = 1, k = 0;
+    
     while (1) 
     {
         k = 0; vida = 5;
+
         do
         {
             printf(
@@ -60,9 +62,9 @@ int main ()
         }
         while (lixo != '1');
 
-        printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); limpa();
+        printf("Insira a frase secreta: "); scanf(" %[^\n]s", secreta); limpa();
         while ( ehvalido(secreta) != 1)
-            {   printf("Frase invalida. Tente novamente: "); scanf("%[^\n]s", secreta); limpa(); }
+            {   printf("Frase invalida. Tente novamente: "); scanf(" %[^\n]s", secreta); limpa(); }
         for (i = 0 ; i < strlen(secreta) ; i++)
         {
             if ( secreta[i] >= 97 && secreta[i] <= 122 )
@@ -96,7 +98,9 @@ int main ()
             if (perdeu == 1)
                 vida-=1;
             perdeu = 1; k++;
-        } while (vida > 0 && strcmp(secreta2, secreta) != 0);
+        }
+        while (vida > 0 && strcmp(secreta2, secreta) != 0);
+        
         printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
         printf("\t%s\n", secreta2);
         memset(chutes, 0, sizeof chutes);
