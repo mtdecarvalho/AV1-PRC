@@ -9,18 +9,25 @@
 
 #define max 100
 
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
+
 int main ()
 {
     int N, i, k;
     double n[max], media = 0, temp;
-    char cont;
+    char j;
+    
     do
     {
-        printf("Insira os valores (ate 100) a serem analisados:\n"
+        printf("Insira os valores (1 ate 100) a serem analisados:\n"
                 "(Para encerrar a leitura, insira 0)\n");
         for ( i = 0 ; i < 100 ; i++ )
         {
-            scanf(" %lf", &n[i]); if (n[i] == 0) { i--; N = i; break; }
+            while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0)   {    printf("Valor invalido. Tente novamente: "); limpa();  } 
+            if (n[i] == 0)  { i--; N = i; break; }
         }
         for (i = 0 ; i <= N ; i++)
         {
@@ -30,15 +37,17 @@ int main ()
                     temp = n[k];    n[k] = n[i];    n[i] = temp;
                 }
         }
-        k = 0; printf("Extremo 1 %lf Extremo 2 %lf\n", n[0], n[N]);
+        k = 0; printf("Extremos: |%lf| e |%lf|\n", n[0], n[N]);
         for (i = 0 ; i <= N ; i++)
         {
             if ( n[i] > n[0] && n[i] < n[N] )
-            {   media+=n[i]; k++;   printf("%lf\n", media); }
+            {   media+=n[i]; k++;   } //printf("%lf\n", media); }
         }
         media/=k;
         printf("A media dos valores sem seus extremos eh %.1lf.\n", media);
-        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &cont);
-    } while (cont == 's' || cont == 'S');
+        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j);
+    }
+    while (j == 's' || j == 'S');
+    
     return 0;
 }
