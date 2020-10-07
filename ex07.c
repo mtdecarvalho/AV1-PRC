@@ -14,6 +14,11 @@ int ehnum ( char a[] )
     return 1;
 }
 
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
+
 typedef struct {
     char nome[30];
     double n1, n2, media;
@@ -25,11 +30,12 @@ int main ()
     char N[10], j;
     double mediaturma;
     Taluno alunos[100];
+    
     do
     {
-        printf("Insira o numero de alunos a serem registrados: "); scanf("%s", N); while ((getchar()) != '\n');
-        while (ehnum(N)!=1)
-        {   printf("O valor inserido nao eh um numero valido. Tente novamente: ");  scanf("%s", N); while ((getchar()) != '\n');   }
+        printf("Insira o numero de alunos a serem registrados: "); scanf("%s", N); limpa();
+        while ( ehnum(N)!=1 || strlen(N) > 2 && strcmp(N,"100")!=0 )
+        {   printf("O valor inserido nao eh um numero valido. Tente novamente: ");  scanf("%s", N); limpa();   }
         n = atoi(N);
         printf("Preencha as proximas %d linhas com os dados dos alunos: \n"
                 "Ex: Matheus 10.0 10.0\n", n);
@@ -38,7 +44,7 @@ int main ()
             while (scanf("%s", alunos[i].nome) == 0 || scanf("%lf", &alunos[i].n1) == 0 || scanf("%lf", &alunos[i].n2) == 0
                          || alunos[i].n1 > 10 || alunos[i].n2 > 10)
             {
-                while ((getchar()) != '\n');
+                limpa();
                 printf("Os dados foram inseridos incorretamente. Favor seguir o modelo:\nEx: Matheus 10.0 10.0\n");
             }
             alunos[i].media = (alunos[i].n1 + 2*alunos[i].n2) / 3;
@@ -57,7 +63,9 @@ int main ()
             }
             else if (i == n-1 && k == 0)
                 printf("\nNao ha nenhum aluno com media maior do que a media da turma.\n");
-        printf("\nDeseja reiniciar o programa? [s / n]\n"); scanf(" %c", &j); while ((getchar()) != '\n');
-    } while (j == 's' || j == 'S');
+        printf("\nDeseja reiniciar o programa? [s / n]\n"); scanf(" %c", &j); limpa();
+    }
+    while (j == 's' || j == 'S');
+    
     return 0;
 }
