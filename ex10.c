@@ -23,6 +23,11 @@ int ehvalido ( char a[] )
         return 1;
 }
 
+void limpa()
+{
+    while ((getchar()) != '\n');
+}
+
 int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
@@ -40,7 +45,7 @@ int main ()
             "\t# 2 # Mostrar regras          #\n"
             "\t# 0 # Encerrar programa       #\n"
             "\t###############################\n");
-            scanf("%c", &lixo); while ((getchar()) != '\n');
+            scanf("%c", &lixo); limpa();
             switch (lixo)
             {
                 case '2':
@@ -55,9 +60,9 @@ int main ()
         }
         while (lixo != '1');
 
-        printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); while ((getchar()) != '\n');
+        printf("Insira a frase secreta: "); scanf("%[^\n]s", secreta); limpa();
         while ( ehvalido(secreta) != 1)
-            {   printf("Frase invalida. Tente novamente: "); scanf("%[^\n]s", secreta); while ((getchar()) != '\n'); }
+            {   printf("Frase invalida. Tente novamente: "); scanf("%[^\n]s", secreta); limpa(); }
         for (i = 0 ; i < strlen(secreta) ; i++)
         {
             if ( secreta[i] >= 97 && secreta[i] <= 122 )
@@ -76,8 +81,8 @@ int main ()
         {
             printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
             printf("\t%s\n", secreta2);
-            printf("\nInsira a letra:\n"); scanf("%c", &input);
-            while ((getchar()) != '\n');
+            printf("\nInsira a letra:\n"); scanf(" %c", &input);
+            limpa();
             for (i = 0 ; i < 100 ; i++) //limpar tela. melhorar talvez?
             printf("\n");
             if (input >= 97 && input <= 122)
