@@ -24,6 +24,25 @@ int ehvalido ( char a[] )
         return 1;
 }
 
+
+void limpartela()
+{
+    #ifdef __linux__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __linux__
+        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+    #elif _WIN32
+        system("pause");
+    #endif
+}
+
 void limpa()
 {
     while ((getchar()) != '\n');
@@ -51,24 +70,6 @@ void regras()
     "# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
     "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
-}
-
-void limpartela()
-{
-    #ifdef __linux__
-        system("clear");
-    #elif _WIN32
-        system("cls");
-    #endif
-}
-
-void pausartela()
-{
-    #ifdef __linux__
-        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
-    #elif _WIN32
-        system("pause");
-    #endif
 }
 
 int main ()
