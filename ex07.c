@@ -4,6 +4,8 @@
 //                     media = (Nota1 + 2*Nota2) / 3
 
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
 int ehnum ( char a[] )
 {
