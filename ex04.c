@@ -23,27 +23,27 @@ int main ()
 {
     int linha[2], coluna[2], i, j;
     double M1[MAX][MAX], M2[MAX][MAX], res[MAX][MAX];
-    printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]); 
-    while ( linha[0] < 0 || coluna[0] < 0 )
+
+    do
     {
-        printf("Valores invalidos!\n");
-        printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]);
-    }
-    printf("Insira o numero de linhas e colunas da segunda matriz: ");
-    scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
-    while ( linha[1] < 0 || coluna[1] < 0 )
-    {
-        printf("Valores invalidos!\n");
-        printf("Insira o numero de linhas e colunas da segunda matriz: "); scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
-    }
-    while ( linha[0] != linha[1] || coluna[0] != coluna[1] )
-    {
-        printf("Matrizes incompativeis para a soma!\n");
-        printf("Insira o numero de linhas e colunas da primeira matriz: ");
-        scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]);
+        printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]); 
+        while ( linha[0] < 0 || coluna[0] < 0 )
+        {
+            printf("Valores invalidos!\n");
+            printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]);
+        }
         printf("Insira o numero de linhas e colunas da segunda matriz: ");
         scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
+        while ( linha[1] < 0 || coluna[1] < 0 )
+        {
+            printf("Valores invalidos!\n");
+            printf("Insira o numero de linhas e colunas da segunda matriz: "); scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
+        }
+        if ( linha[0] != linha[1] || coluna[0] != coluna[1] )
+            printf("Matrizes incompativeis para a soma!\n");
     }
+    while ( linha[0] != linha[1] || coluna[0] != coluna[1] );
+
     printf("MATRIZ 1\n");
     for (i = 0 ; i < linha[0] ; i++)
     {
@@ -58,10 +58,13 @@ int main ()
         for (j = 0 ; j < coluna[1] ; j++)
             scanf(" %lf", &M2[i][j]);
     }
+
+    //SOMATORIO
     for (i = 0 ; i < linha[1] ; i++)
         for (j = 0 ; j < coluna[1] ; j++)
             res[i][j] = M1[i][j] + M2[i][j];
-    printf("RESULTADO\n");
+
+    printf("RESULTADO DA SOMA:\n");
     for (i = 0 ; i < linha[1] ; i++)
     {
         for (j = 0 ; j < coluna[1] ; j++)
