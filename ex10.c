@@ -46,12 +46,10 @@ void regras()
 {
     limpartela();
     printf(
-    "\t                                                   # Regras #\n"
-    "\t#############################################################################################################################\n"
-    "\t# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.                                                       #\n"
-    "\t# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.                           #\n"
-    "\t# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada. #\n"
-    "\t#############################################################################################################################\n");
+    "\t# Regras #\n\n"
+    "# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.\n"
+    "# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
+    "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
 }
 
