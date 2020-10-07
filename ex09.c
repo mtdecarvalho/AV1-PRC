@@ -26,7 +26,11 @@ int main ()
                 "(Para encerrar a leitura, insira 0)\n");
         for ( i = 0 ; i < 100 ; i++ )
         {
-            while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0)   {    printf("Valor invalido. Tente novamente: "); limpa();  } 
+            while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0)
+            {
+                printf("%s", n[0] == 0 ? "Nenhum valor foi inserido. Tente novamente: \n" : "Valor invalido. Tente novamente: ");
+                limpa();
+            } 
             if (n[i] == 0)  { i--; N = i; break; }
         }
         for (i = 0 ; i <= N ; i++)
@@ -37,15 +41,15 @@ int main ()
                     temp = n[k];    n[k] = n[i];    n[i] = temp;
                 }
         }
-        k = 0; printf("Extremos: |%lf| e |%lf|\n", n[0], n[N]);
-        for (i = 0 ; i <= N ; i++)
+        printf("Extremos: |%lf| e |%lf|\n", n[0], n[N]);
+        for (i = 1, k = 0 ; i <= N ; i++)
         {
             if ( n[i] > n[0] && n[i] < n[N] )
             {   media+=n[i]; k++;   } //printf("%lf\n", media); }
         }
         media/=k;
         printf("A media dos valores sem seus extremos eh %.1lf.\n", media);
-        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j);
+        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
     }
     while (j == 's' || j == 'S');
     
