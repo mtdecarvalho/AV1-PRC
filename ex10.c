@@ -32,7 +32,7 @@ int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, lixo, cont;
     int vida = 5, i = 0, perdeu = 1, k = 0;
-    
+
     while (1) 
     {
         k = 0; vida = 5;
@@ -47,7 +47,7 @@ int main ()
             "\t# 2 # Mostrar regras          #\n"
             "\t# 0 # Encerrar programa       #\n"
             "\t###############################\n");
-            scanf("%c", &lixo); limpa();
+            scanf(" %c", &lixo); limpa();
             switch (lixo)
             {
                 case '2':
