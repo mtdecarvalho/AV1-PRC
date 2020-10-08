@@ -16,22 +16,22 @@ void limpa ()
 
 int main ()
 {
-    int N, i, k;
+    int N, i, k, l;
     double n[max], media = 0, temp;
     char j;
     
     do
     {
-        printf("Insira os valores (1 ate 100) a serem analisados:\n"
-                "(Para encerrar a leitura, insira 0)\n");
-        for ( i = 0 ; i < 100 ; i++ )
+        printf("Insira os valores a serem analisados (min. 1, max. 100):\n"
+                "(Para encerrar a leitura, insira 0)\n\n");
+        for ( i = 0, l = 0 ; i < 100 ; i++, l++ )
         {
-            while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0)
+            while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0 )
             {
                 printf("%s", n[0] == 0 ? "Nenhum valor foi inserido. Tente novamente: \n" : "Valor invalido. Tente novamente: ");
                 limpa();
             } 
-            if (n[i] == 0)  { i--; N = i; break; }
+            if (n[i] == 0)  { i--; l--; N = i; break; }
         }
         for (i = 0 ; i <= N ; i++)
         {
@@ -41,14 +41,14 @@ int main ()
                     temp = n[k];    n[k] = n[i];    n[i] = temp;
                 }
         }
-        printf("Extremos: |%lf| e |%lf|\n", n[0], n[N]);
+        printf("Extremos: |%.2lf| e |%.2lf|\n", n[0], n[N]);
         for (i = 1, k = 0 ; i <= N ; i++)
         {
             if ( n[i] > n[0] && n[i] < n[N] )
             {   media+=n[i]; k++;   } //printf("%lf\n", media); }
         }
         media/=k;
-        printf("A media dos valores sem seus extremos eh %.1lf.\n", media);
+        printf("A media dos valores sem seus extremos eh %.2lf.\n", l <= 2 ? 0 : media);
         printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
     }
     while (j == 's' || j == 'S');
