@@ -16,39 +16,40 @@ void limpa ()
 
 int main ()
 {
-    int N, i, k, l;
-    double n[max], media = 0, temp;
+    int N, i;
+    double n[max], media = 0, ex[3], k;
     char j;
     
     do
     {
         printf("Insira os valores a serem analisados (min. 1, max. 100):\n"
-                "(Para encerrar a leitura, insira 0)\n\n");
-        for ( i = 0, l = 0 ; i < 100 ; i++, l++ )
+                "\t(Para encerrar a leitura, insira 0)\n\n");
+        for ( i = 0 ; i < 100 ; i++ )
         {
             while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0 )
             {
-                printf("%s", n[0] == 0 ? "Nenhum valor foi inserido. Tente novamente: \n" : "Valor invalido. Tente novamente: ");
+                printf("Nenhum valor valido foi inserido. Tente novamente: \n");
                 limpa();
             } 
-            if (n[i] == 0)  { i--; l--; N = i; break; }
+            if (n[i] == 0)  { i--; N = i; i = 99; }
         }
+        ex[0] = n[0]; ex[1] = n[0];
         for (i = 0 ; i <= N ; i++)
         {
-            for (k = 0; k <= N ; k++)
-                if (n[i] < n[k])
-                {
-                    temp = n[k];    n[k] = n[i];    n[i] = temp;
-                }
+            if ( n[i] > ex[1] )
+                ex[1] = n[i];
+            if ( n[i] < ex[0] )
+                ex[0] = n[i];
         }
-        printf("Extremos: |%.2lf| e |%.2lf|\n", n[0], n[N]);
-        for (i = 1, k = 0 ; i <= N ; i++)
+
+        printf("Extremos: |%.2lf| e |%.2lf|\n", ex[0], ex[1]);
+        for (i = 0 ; i <= N ; i++)
         {
-            if ( n[i] > n[0] && n[i] < n[N] )
-            {   media+=n[i]; k++;   } //printf("%lf\n", media); }
+            if ( n[i] > ex[0] && n[i] < ex[1] )
+            {   media+=n[i]; k++; printf("%lf\n", media); }
         }
         media/=k;
-        printf("A media dos valores sem seus extremos eh %.2lf.\n", l <= 2 ? 0 : media);
+        printf("A media dos valores sem seus extremos eh %.2lf.\n", media);
         printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
     }
     while (j == 's' || j == 'S');
