@@ -12,7 +12,7 @@ void limpa ()
 
 int main ()
 {
-    int linha[2], coluna[2], i, j, k;
+    int linha[3], coluna[3], i, j, k;
     double M1[MAX][MAX], M2[MAX][MAX], res[MAX][MAX], somaprod;
 
     do
@@ -43,28 +43,28 @@ int main ()
         {
             scanf(" %lf", &M1[i][j]); printf(" %lf\n", M1[i][j]);
         }
-    limpa();    
     }
+    limpa();    
     printf("MATRIZ 2\n");
     printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[1], coluna[1]);
     for (i = 0 ; i < linha[1] ; i++)
     {
         for (j = 0 ; j < coluna[1] ; j++)
         {
-            scanf(" %lf", &M1[i][j]); printf(" %lf\n", M1[i][j]);
+            scanf(" %lf", &M2[i][j]); printf(" %lf\n", M2[i][j]);
         }
-    limpa();
     }
+    limpa();
 
-    for (i = 0 ; i < linha[0] ; i++)                                //M[1][1] * M[1][1] -> M[1][2] * M[2][1] -> M[1][3] * m[3][1]
+    for (i = 0 ; i < linha[0] ; i++)    
         for (j = 0 ; j < coluna[1] ; j++)
         {
             somaprod = 0;
-            for (k = 0 ; k < linha[0] ; k++)
+            for (k = 0 ; k < coluna[0] ; k++)
                 somaprod+=M1[i][k]*M2[k][j];
             res[i][j] = somaprod;
         }    
-    
+
     printf("RESULTADO\n");
     for (i = 0 ; i < linha[0] ; i++)
     {
