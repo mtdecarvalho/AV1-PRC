@@ -44,7 +44,7 @@ int main ()
         for (i = 0 ; i < n ; i++)
         {
             while (scanf("%s", alunos[i].nome) == 0 || scanf("%lf", &alunos[i].n1) == 0 || scanf("%lf", &alunos[i].n2) == 0
-                         || alunos[i].n1 > 10 || alunos[i].n2 > 10)
+                         || alunos[i].n1 > 10 || alunos[i].n2 > 10 || alunos[i].n1 < 0 || alunos[i].n2 < 0)
             {
                 limpa();
                 printf("Os dados foram inseridos incorretamente. Favor seguir o modelo:\nEx: Matheus 10.0 10.0\n");
