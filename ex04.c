@@ -32,14 +32,14 @@ int main ()
             printf("Insira o numero de linhas e colunas da primeira matriz: ");
             while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] < 0 || coluna[0] < 0  || linha[0] > 100 || coluna[0] > 100 )
             {
-                printf("Valores invalidos! Tente novamente.\n");
-                printf("Insira o numero de linhas e colunas da primeira matriz: "); limpa();
+                printf("Valores invalidos! Tente novamente.\n"
+                        "Insira o numero de linhas e colunas da primeira matriz: "); limpa();
             }
             printf("Insira o numero de linhas e colunas da segunda matriz: ");
             while ( scanf(" %d", &linha[1]) != 1 || scanf(" %d", &coluna[1]) != 1 || linha[1] < 0 || coluna[1] < 0  || linha[1] > 100 || coluna[1] > 100 )
             {
-                printf("Valores invalidos! Tente novamente.\n");
-                printf("Insira o numero de linhas e colunas da segunda matriz: "); limpa();
+                printf("Valores invalidos! Tente novamente.\n"
+                        "Insira o numero de linhas e colunas da segunda matriz: "); limpa();
             }
             if ( linha[0] != linha[1] || coluna[0] != coluna[1] )
                 printf("Matrizes incompativeis para a soma!\n");
