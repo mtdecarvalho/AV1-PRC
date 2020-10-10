@@ -29,7 +29,7 @@ typedef struct {
 int main ()
 {
     int n, i = 0, k;
-    char N[10], j;
+    char N[4], j;
     double mediaturma;
     Taluno alunos[100];
     
@@ -53,19 +53,20 @@ int main ()
         }
         for (i = 0 ; i < n ; i++)
         {  
-            //printf("%s: %.2lf\n", alunos[i].nome, alunos[i].media);
+            //printf("\t%s  %lf", alunos[i].nome, alunos[i].media);
             mediaturma += alunos[i].media;
         }
         mediaturma /= n; printf("\nMedia da turma: %.2lf\n\n", mediaturma);
         for (i = 0, k = 0 ; i < n ; i++)
             if (alunos[i].media > mediaturma)
             {   
-                printf("Os seguintes alunos possuem media de notas maior do que a da turma:\n");
-                printf("Nome: %s\tMedia: %.2lf\n", alunos[i].nome, alunos[i].media); k++;
+                if ( k == 0 ) { printf("Os seguintes alunos possuem media de notas maior do que a da turma:\n"); }
+                printf("Nome: %s\t\tMedia: %.2lf\n", alunos[i].nome, alunos[i].media); k++;
             }
             else if (i == n-1 && k == 0)
                 printf("\nNao ha nenhum aluno com media maior do que a media da turma.\n");
         printf("\nDeseja reiniciar o programa? [s / n]\n"); scanf(" %c", &j); limpa();
+        mediaturma = 0; memset(alunos, 0 , sizeof(alunos));
     }
     while (j == 's' || j == 'S');
     
