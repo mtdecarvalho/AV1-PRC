@@ -31,11 +31,11 @@ int main ()
                 multiplo+=1;
 
         if (multiplo > 0 || res <= 1)
-            printf("\tO numero %d nao eh primo.\n", res);
+            printf("\n\tO numero %d nao eh primo.\n", res);
         else
-            printf("\tO numero %d eh primo.\n", res);
+            printf("\n\tO numero %d eh primo.\n", res);
     
-        printf("Deseja continuar? [s / n]\t"); scanf(" %c", &k); limpa();
+        printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &k); limpa();
     }
     while (k == 's' || k == 'S');
     
