@@ -4,7 +4,11 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
 
 int main ()
 {
@@ -12,8 +16,13 @@ int main ()
     int i, tam, k = 0;
     do
     {
-        printf("Insira a%s frase/palavra a ser analisada: \n", cont == 's' || cont == 'S' ? " proxima" : "");
-        scanf(" %[^\n]s", frase1); while((getchar()) != '\n'); tam = strlen(frase1); strcpy(original, frase1); 
+        printf("Insira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
+        scanf(" %[^\n]s", frase1);
+        while ( strlen(frase1) <= 1 )
+        {
+            limpa(); printf("\n\tInsira uma frase/palavra valida.\n"); scanf(" %[^\n]s", frase1);
+        }
+        limpa(); tam = strlen(frase1); strcpy(original, frase1); 
         for (i = 0; i < strlen(frase1) ; i++)
         {
             if (frase1[i] >= 65 && frase1[i] <= 90)
@@ -25,8 +34,10 @@ int main ()
         {
             temp = frase2[i]; frase2[i] = frase2[k]; frase2[k] = temp;
         }
-        printf("\"%s\"%s eh palindrome.\n", original, strcmp(frase2,frase1) == 0 ? "" : " nao"); //substitior por if/else?
-        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &cont); while ((getchar()) != '\n');
-    } while (cont == 's' || cont == 'S');
+        printf("\n\t\"%s\"%s eh palindrome.\n", original, strcmp(frase2,frase1) == 0 ? "" : " nao"); //substitior por if/else?
+        printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &cont); limpa();
+    }
+    while (cont == 's' || cont == 'S');
+    
     return 0;
 }
