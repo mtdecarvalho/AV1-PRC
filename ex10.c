@@ -12,19 +12,6 @@
 
 #define tammax 100
 
-int ehvalido ( char a[] )
-{
-    int i = 0, k = 0;
-    for (i = 0 ; i < strlen(a) ; i++)
-        if ( !isalpha(a[i]) )
-            k++;
-    if ( k == strlen(a) )
-        return 0;
-    else
-        return 1;
-}
-
-
 void limpartela()
 {
     #ifdef __unix__
@@ -45,6 +32,18 @@ void pausartela()
     #elif _WIN64
         system("pause");
     #endif
+}
+
+int ehvalido ( char a[] )
+{
+    int i = 0, k = 0;
+    for (i = 0 ; i < strlen(a) ; i++)
+        if ( !isalpha(a[i]) )
+            k++;
+    if ( k == strlen(a) )
+        return 0;
+    else
+        return 1;
 }
 
 void limpa()
