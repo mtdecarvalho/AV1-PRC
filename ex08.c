@@ -11,41 +11,59 @@
 
 #define TAMMAX 1000
 
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
+
 int main ()
 {
-    long int n1, n2, i, k = 0;
-    int div1[TAMMAX], div2[TAMMAX], soma1, soma2;
-    char input1[TAMMAX], input2[TAMMAX];
-    char * l;
-    puts("Insira os dois numeros (positivos e inteiros) a serem comparados:");
-    scanf("%s %[^\n]s", input1, input2);
-    n1 = strtol(input1, &l, 10); n2 = strtol(input2, &l, 10);
-    while (strtol(input1, &l, 10) == 0 || strtol(input2, &l, 10) == 0 || n1 < 0 || n2 < 0)
+    int n1, n2, i, k = 0;
+    int div1[TAMMAX], div2[TAMMAX], soma[3];
+    char p;
+
+    do
     {
-        printf("Por favor, insira numeros validos.\n"); scanf("%s %[^\n]s", input1, input2);
-        n1 = strtol(input1, &l, 10); n2 = strtol(input2, &l, 10);
-    }
-    for (i = 1 , k = 0 ; i <= n1 ; i++)
-    {
-        if (n1 % i == 0)
-        {
-            div1[k] = i; k++;
+        printf("Insira os dois numeros (positivos e inteiros) a serem comparados: ");
+        while ( scanf(" %d", &n1) != 1 || scanf(" %d", &n2) != 1 || n1 < 0 || n2 < 0 )
+        { 
+            printf("Valores invalidos! Tente novamente:\n"
+                    "Insira os dois numeros (positivos e inteiros) a serem comparados: "); limpa();
         }
-    }
-    for (i = 1 , k = 0 ; i <= n2 ; i++)
-    {
-        if (n2 % i == 0)
+        for (i = 1 , k = 0 ; i <= n1 ; i++)
         {
-            div2[k] = i; k++;
+            if (n1 % i == 0)
+            {
+                div1[k] = i; k++;
+            }
         }
+        for (i = 1 , k = 0 ; i <= n2 ; i++)
+        {
+            if (n2 % i == 0)
+            {
+                div2[k] = i; k++;
+            }
+        }
+        for (i = 0 ; div1[i] != n1 ; i++)
+            soma[0] += div1[i];
+        for (i = 0 ; div2[i] != n2 ; i++)
+            soma[1] += div2[i];
+        if (soma[0] == n2 && soma[1] == n1)
+            printf("\n\t%d e %d sao numeros amigos.\n", n1, n2);
+        else
+            printf("\n\t%d e %d nao sao numeros amigos.\n", n1, n2);
+        printf("\nDeseja reiniciar o programa? [s / n]\t"); scanf(" %c", &p); limpa();
+        memset(soma, 0, sizeof(soma));
     }
-    for (i = 0 ; div1[i] != n1 ; i++)
-        soma1 += div1[i];
-    for (i = 0 ; div2[i] != n2 ; i++)
-        soma2 += div2[i];
-    if (soma1 == n2 && soma2 == n1)
-        printf("%d e %d sao numeros amigos.\n", n1, n2);
-    else
-        printf("%d e %d nao sao numeros amigos.\n", n1, n2);
+    while (p == 's' || p == 'S');
+
     return 0;
 }
+
+        //scanf("%s %[^\n]s", input1, input2);
+        //n1 = strtol(input1, &l, 10); n2 = strtol(input2, &l, 10);
+        //while (strtol(input1, &l, 10) == 0 || strtol(input2, &l, 10) == 0 || n1 < 0 || n2 < 0)
+        //{
+        //    printf("Por favor, insira numeros validos.\n"); scanf("%s %[^\n]s", input1, input2);
+        //    n1 = strtol(input1, &l, 10); n2 = strtol(input2, &l, 10);
+        //}
