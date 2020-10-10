@@ -1,4 +1,4 @@
-# Arquivos compilados #
+# Arquivos #
 #######################
 ex01
 ex02
@@ -11,6 +11,8 @@ ex08
 ex09
 ex10
 *.exe
+ex01FINAL.c
+ex01ver2.c
 
 # Packages #
 ############
