@@ -4,19 +4,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-int ehnum ( char a[] )
-{
-    int i;
-    for (i = 0 ; i < strlen(a) ; i++)
-        if ( !isdigit(a[i]) )
-            return 0;
-        else if (a[0] == '0' || a[0] == '\n')
-            return 0;
-    return 1;
-}
+//#include <string.h>
+//#include <ctype.h>
 
 void limpa ()
 {
@@ -27,6 +16,7 @@ int main ()
 {
     int res, multiplo = 0, i, tam;
     char s[1000], k, j;
+    
     do
     {
         printf("Insira o numero positivo e inteiro a ser analisado: "); 
@@ -36,16 +26,10 @@ int main ()
                     "Insira o numero positivo e inteiro a ser analisado: "); limpa();
         }
         limpa();
-        //scanf("%s", s);
-        //while ( ehnum(s) != 1 )
-        //{
-        //    printf("O valor inserido nao eh valido. Insira um numero valido: "); scanf("%s", s);
-        //}
-        //res = atoi(s);
         for (i = 1; i<=res && multiplo<1; i++)
             if (res % i == 0 && i > 1 && i < res)
                 multiplo+=1;
-                
+
         if (multiplo > 0 || res <= 1)
             printf("\tO numero %d nao eh primo.\n", res);
         else
@@ -57,3 +41,21 @@ int main ()
     
     return 0;
 }
+
+//int ehnum ( char a[] )
+//{
+//    int i;
+//    for (i = 0 ; i < strlen(a) ; i++)
+//        if ( !isdigit(a[i]) )
+//            return 0;
+//        else if (a[0] == '0' || a[0] == '\n')
+//            return 0;
+//    return 1;
+//}
+        
+        //scanf("%s", s);
+        //while ( ehnum(s) != 1 )
+        //{
+        //    printf("O valor inserido nao eh valido. Insira um numero valido: "); scanf("%s", s);
+        //}
+        //res = atoi(s);
