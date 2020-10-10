@@ -23,53 +23,60 @@ int main ()
 {
     int linha[2], coluna[2], i, j;
     double M1[MAX][MAX], M2[MAX][MAX], res[MAX][MAX];
+    char p;
 
-    do
+    do 
     {
-        printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]); 
-        while ( linha[0] < 0 || coluna[0] < 0 )
+        do
         {
-            printf("Valores invalidos!\n");
-            printf("Insira o numero de linhas e colunas da primeira matriz: "); scanf(" %d", &linha[0]); scanf(" %d", &coluna[0]);
+            printf("Insira o numero de linhas e colunas da primeira matriz: ");
+            while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] < 0 || coluna[0] < 0  || linha[0] > 100 || coluna[0] > 100 )
+            {
+                printf("Valores invalidos! Tente novamente.\n");
+                printf("Insira o numero de linhas e colunas da primeira matriz: "); limpa();
+            }
+            printf("Insira o numero de linhas e colunas da segunda matriz: ");
+            while ( scanf(" %d", &linha[1]) != 1 || scanf(" %d", &coluna[1]) != 1 || linha[1] < 0 || coluna[1] < 0  || linha[1] > 100 || coluna[1] > 100 )
+            {
+                printf("Valores invalidos! Tente novamente.\n");
+                printf("Insira o numero de linhas e colunas da segunda matriz: "); limpa();
+            }
+            if ( linha[0] != linha[1] || coluna[0] != coluna[1] )
+                printf("Matrizes incompativeis para a soma!\n");
         }
-        printf("Insira o numero de linhas e colunas da segunda matriz: ");
-        scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
-        while ( linha[1] < 0 || coluna[1] < 0 )
+        while ( linha[0] != linha[1] || coluna[0] != coluna[1] );
+
+        printf("\tMATRIZ 1\n");
+        printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[0], coluna[0]);
+        for (i = 0 ; i < linha[0] ; i++)
         {
-            printf("Valores invalidos!\n");
-            printf("Insira o numero de linhas e colunas da segunda matriz: "); scanf(" %d", &linha[1]); scanf(" %d", &coluna[1]);
+            for (j = 0 ; j < coluna[0] ; j++)
+                scanf(" %lf", &M1[i][j]);
         }
-        if ( linha[0] != linha[1] || coluna[0] != coluna[1] )
-            printf("Matrizes incompativeis para a soma!\n");
-    }
-    while ( linha[0] != linha[1] || coluna[0] != coluna[1] );
+        printf("\tMATRIZ 2\n");
+        printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[1], coluna[1]);
+        for (i = 0 ; i < linha[1] ; i++)
+        {
+            for (j = 0 ; j < coluna[1] ; j++)
+                scanf(" %lf", &M2[i][j]);
+        }
 
-    printf("MATRIZ 1\n");
-    for (i = 0 ; i < linha[0] ; i++)
-    {
-        printf("Preencha as colunas da linha %d:\n", i+1);
-        for (j = 0 ; j < coluna[0] ; j++)
-            scanf(" %lf", &M1[i][j]);
-    }
-    printf("MATRIZ 2\n");
-    for (i = 0 ; i < linha[1] ; i++)
-    {
-        printf("Preencha as colunas da linha %d:\n", i+1);
-        for (j = 0 ; j < coluna[1] ; j++)
-            scanf(" %lf", &M2[i][j]);
-    }
+        //SOMATORIO
+        for (i = 0 ; i < linha[1] ; i++)
+            for (j = 0 ; j < coluna[1] ; j++)
+                res[i][j] = M1[i][j] + M2[i][j];
 
-    //SOMATORIO
-    for (i = 0 ; i < linha[1] ; i++)
-        for (j = 0 ; j < coluna[1] ; j++)
-            res[i][j] = M1[i][j] + M2[i][j];
-
-    printf("RESULTADO DA SOMA:\n");
-    for (i = 0 ; i < linha[1] ; i++)
-    {
-        for (j = 0 ; j < coluna[1] ; j++)
-            printf("%.2lf\t",res[i][j]);
-        printf("\n");
+        printf("\tRESULTADO DA SOMA:\n");
+        for (i = 0 ; i < linha[1] ; i++)
+        {
+            for (j = 0 ; j < coluna[1] ; j++)
+                printf("%.2lf\t",res[i][j]);
+            printf("\n");
+        }
+        printf("Deseja reiniciar o programa? [s / n]\n"); scanf(" %c", &p); limpa();
+        memset(res, 0, sizeof(res)); memset(M1, 0, sizeof(M1)); memset(M2, 0, sizeof(M2));
     }
+    while (p == 's' || p == 'S');
+
     return 0;
 }
