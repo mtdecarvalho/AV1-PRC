@@ -18,32 +18,42 @@ int ehnum ( char a[] )
     return 1;
 }
 
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
+
 int main ()
 {
     int res, multiplo = 0, i, tam;
-    char s[1000], k;
+    char s[1000], k, j;
     do
     {
         printf("Insira o numero positivo e inteiro a ser analisado: "); 
-        scanf("%s", s);
-        while ( ehnum(s) != 1 )
+        while (scanf(" %d", &res) != 1 || scanf(".%c", &j) == 1 || res < 0)
         {
-            printf("O valor inserido nao eh valido. Insira um numero valido: "); scanf("%s", s);
+            printf("\tO valor inserido eh invalido!\n"
+                    "Insira o numero positivo e inteiro a ser analisado: "); limpa();
         }
-        res = atoi(s);
-        for (i = 1; i<=res && multiplo<1; i++) // checa se existem multiplos alem de 1 e ele mesmo
+        limpa();
+        //scanf("%s", s);
+        //while ( ehnum(s) != 1 )
+        //{
+        //    printf("O valor inserido nao eh valido. Insira um numero valido: "); scanf("%s", s);
+        //}
+        //res = atoi(s);
+        for (i = 1; i<=res && multiplo<1; i++)
             if (res % i == 0 && i > 1 && i < res)
                 multiplo+=1;
-        if (multiplo > 0 || res <= 1) // se tiver algum multiplo ou for o numero 1
-        {
-            if (res == 69)
-                printf("Nice.\n");
-            printf("O numero %d nao eh primo.\n", res);
-        }
-        else //caso não tenha
-            printf("O numero %d eh primo.\n", res);
-        multiplo = 0; //reseta o contador de multiplos
-        printf("Deseja continuar? [s / n] "); scanf(" %c", &k); //checa condicao de continuar e consome o \n no buffer
-    } while (k == 's' || k == 'S');
+                
+        if (multiplo > 0 || res <= 1)
+            printf("\tO numero %d nao eh primo.\n", res);
+        else
+            printf("\tO numero %d eh primo.\n", res);
+    
+        printf("Deseja continuar? [s / n]\t"); scanf(" %c", &k); limpa();
+    }
+    while (k == 's' || k == 'S');
+    
     return 0;
 }
