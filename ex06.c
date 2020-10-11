@@ -12,12 +12,17 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+void limpa ()
+{
+    while ((getchar()) != '\n');
+}
+
 int main ()
 {
     int numpedido, qtdpedido;
     double val;
     char invalido, lixo;
-    char cardapio[905] =
+    char cardapio[] =
     (" __________________________________________\n"
     "|    BEM-VINDO AO CARVALHO'S FOODTRUCK!    |\n"
     "|------------------------------------------|\n"
@@ -33,12 +38,13 @@ int main ()
     "| 0 |       Encerrar programa              |\n" 
     "|__________________________________________|");
     puts(cardapio);
+    
     do
     {
         printf("\nInsira o numero de seu pedido: ");
-        while ( scanf("%d", &numpedido) == 0 )
+        while ( scanf(" %d", &numpedido) == 0 )
         {
-            while ((lixo = getchar()) != '\n' && lixo != EOF);
+            limpa();
             printf("\nValor invalido. Insira um numero valido: ");
         }
         switch(numpedido)
@@ -65,5 +71,6 @@ int main ()
         if (qtdpedido == 0) { printf("\nEncerrando programa...\n"); break; }
     }
     while (numpedido != 0);
+    
     return 0;
 }
