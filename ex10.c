@@ -116,9 +116,9 @@ int main ()
 
         do
         {
-            printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
+            printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
             printf("\t%s\n", secreta2);
-            printf("\nInsira a letra:\n"); scanf(" %c", &input);
+            printf("\n\tInsira a letra: "); scanf(" %c", &input);
             limpa();
             limpartela(); //limpar tela. melhorar talvez?
             if (input >= 97 && input <= 122)
@@ -135,12 +135,12 @@ int main ()
         }
         while (vida > 0 && strcmp(secreta2, secreta) != 0);
         
-        printf("\nVidas: %d\tChutes: %s\n\n", vida, chutes);
+        printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
         printf("\t%s\n", secreta2);
         switch (vida)
         {
-            case 0: puts("\nVoce perdeu."); break;
-            default: puts("\nVoce ganhou!"); break;
+            case 0: puts("\n\t\tVoce perdeu."); break;
+            default: puts("\n\t\tVoce ganhou!"); break;
         }
         printf("\nFim de jogo.\n"); pausartela();
     }
