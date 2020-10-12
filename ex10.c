@@ -55,13 +55,20 @@ void menu()
 {
     limpartela();
     printf(
-            "\t###############################\n"
-            "\t# Bem vindo ao jogo da forca! #\n"
-            "\t###############################\n"
-            "\t# 1 # Iniciar o jogo          #\n"
-            "\t# 2 # Mostrar regras          #\n"
-            "\t# 0 # Encerrar programa       #\n"
-            "\t###############################\n");
+            "\t      JOGO DA FORCA\n"
+            "\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t           /|\\    |\n"
+            "\t           / \\    |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"
+            "\t\t#MENU#\n"
+            "\t# 1 # Iniciar o jogo\n"
+            "\t# 2 # Mostrar regras\n"
+            "\t# 0 # Encerrar programa\n");
 }
 
 void regras()
@@ -70,7 +77,7 @@ void regras()
     printf(
     "\t# Regras #\n\n"
     "# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.\n"
-    "# 2 # A frase secreta escondera apenas letras de A ate Z. Qualquer outro caractere sera revelado.\n"
+    "# 2 # A frase secreta escondera apenas letras de A ate Z (acentos nao incluidos). Qualquer outro caractere sera revelado.\n"
     "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
 }
@@ -79,42 +86,78 @@ void forca( int vida )
 {
     switch (vida)
     {
+    case 6:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t                  |\n"
+            "\t                  |\n"
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\t______ O\n"
+            "\t    /_____________/ /\t_____ </V\n"
+            "\t    |_____________|/\t______V\\ \n\n");
+            break;
     case 5:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t                  |\n"
             "\t                  |\n"
-            "\t                  |\n\n"); break;
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"
+            ); break;
     case 4:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t            O     |\n"
             "\t                  |\n"
-            "\t                  |\n\n"); break;
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"); break;
     case 3:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t            O     |\n"
             "\t            |     |\n"
-            "\t                  |\n\n"); break;
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"); break;
     case 2:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t            O     |\n"
             "\t           /|     |\n"
-            "\t                  |\n\n"); break;
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"); break;
     case 1:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t            O     |\n"
             "\t           /|\\    |\n"
-            "\t                  |\n\n"); break;
+            "\t                  |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"); break;
     case 0:
     printf ("\t            _______\n"
             "\t            |     |\n"
             "\t            O     |\n"
             "\t           /|\\    |\n"
-            "\t           / \\    |\n\n"); break;
+            "\t           / \\    |\n"
+            "\t      ____________|_\n"
+            "\t     /             /|\n "
+            "\t    /_____________/ /\n"
+            "\t    |_____________|/\n\n"); break;
     }
 }
 
@@ -159,7 +202,7 @@ int main ()
 
         do
         {
-            printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
+            printf("\tVidas: %d\tChutes: %s\n\n", vida, chutes);
             forca(vida);
             printf("\t%s\n", secreta2);
             printf("\n\tInsira a letra: "); scanf(" %c", &input);
@@ -178,14 +221,15 @@ int main ()
             perdeu = 1; k++;
         }
         while (vida > 0 && strcmp(secreta2, secreta) != 0);
-        
-        printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
-        forca(vida);
+        printf("\tVidas: %d\tChutes: %s\n\n", vida, chutes);
+        forca(vida == 0 ? 0 : 6);
         printf("\t%s\n", secreta2);
         switch (vida)
         {
-            case 0: printf("\n\tVoce perdeu."); break;
-            default: puts("\n\t\tVoce ganhou!"); break;
+            case 0: printf("\n\t\tGame Over."); break;
+            default:
+            printf("\n\t\tVitoria!\n");
+            break;
         }
         printf("\nFim de jogo.\n"); pausartela();
     }
