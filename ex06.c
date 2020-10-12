@@ -19,7 +19,7 @@ void limpa ()
 
 int main ()
 {
-    int numpedido, qtdpedido;
+    int numpedido, qtdpedido, k;
     double val;
     char invalido, lixo;
     char cardapio[] =
@@ -42,7 +42,7 @@ int main ()
     do
     {
         printf("\nInsira o numero de seu pedido: ");
-        while ( scanf(" %d", &numpedido) == 0 )
+        while ( scanf(" %d", &numpedido) == 0 || scanf(".%d", &k) == 1)
         {
             limpa();
             printf("\nValor invalido. Insira um numero valido: ");
