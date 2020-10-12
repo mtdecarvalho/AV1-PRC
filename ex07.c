@@ -35,8 +35,8 @@ int main ()
     
     do
     {
-        printf("Insira o numero de alunos a serem registrados: ");
-        while ( scanf(" %d", &n) != 1 || scanf(".%d", &lixo) == 1 || n > 100 || n < 0 )
+        printf("\nInsira o numero de alunos a serem registrados: ");
+        while ( scanf(" %d", &n) != 1 || scanf(".%d", &lixo) == 1 || n > 100 || n <= 0 )
         {   limpa(); printf("O valor inserido nao eh um numero valido. Tente novamente: "); }
         //n = atoi(N);
         printf("Preencha as proximas %d linhas com os dados dos alunos: \n"
