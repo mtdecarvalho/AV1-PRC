@@ -75,6 +75,49 @@ void regras()
     pausartela();
 }
 
+void forca( int vida )
+{
+    switch (vida)
+    {
+    case 5:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t                  |\n"
+            "\t                  |\n"
+            "\t                  |\n\n"); break;
+    case 4:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t                  |\n"
+            "\t                  |\n\n"); break;
+    case 3:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t            |     |\n"
+            "\t                  |\n\n"); break;
+    case 2:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t           /|     |\n"
+            "\t                  |\n\n"); break;
+    case 1:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t           /|\\    |\n"
+            "\t                  |\n\n"); break;
+    case 0:
+    printf ("\t            _______\n"
+            "\t            |     |\n"
+            "\t            O     |\n"
+            "\t           /|\\    |\n"
+            "\t           / \\    |\n\n"); break;
+    }
+}
+
 int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, j, cont;
@@ -92,7 +135,7 @@ int main ()
             {
                 case '2': regras(); break;
                 case '1': break;
-                case '0': limpartela(); return 0; // Retirar?
+                case '0': limpartela(); return 0;
             }
         }
         while (j != '1');
@@ -112,15 +155,16 @@ int main ()
                 secreta2[i] = '_';
         }
 
-        limpartela(); //limpar tela. melhorar talvez?
+        limpartela();
 
         do
         {
             printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
+            forca(vida);
             printf("\t%s\n", secreta2);
             printf("\n\tInsira a letra: "); scanf(" %c", &input);
             limpa();
-            limpartela(); //limpar tela. melhorar talvez?
+            limpartela();
             if (input >= 97 && input <= 122)
                 input-=32;
             chutes[k] = input;
@@ -136,10 +180,11 @@ int main ()
         while (vida > 0 && strcmp(secreta2, secreta) != 0);
         
         printf("\n\tVidas: %d\tChutes: %s\n\n", vida, chutes);
+        forca(vida);
         printf("\t%s\n", secreta2);
         switch (vida)
         {
-            case 0: puts("\n\t\tVoce perdeu."); break;
+            case 0: printf("\n\tVoce perdeu."); break;
             default: puts("\n\t\tVoce ganhou!"); break;
         }
         printf("\nFim de jogo.\n"); pausartela();
