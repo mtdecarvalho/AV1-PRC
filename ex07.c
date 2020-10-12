@@ -28,22 +28,22 @@ typedef struct {
 
 int main ()
 {
-    int n, i = 0, k;
+    int n, i = 0, k, lixo;
     char N[4], j;
     double mediaturma;
     Taluno alunos[100];
     
     do
     {
-        printf("Insira o numero de alunos a serem registrados: "); scanf("%s", N); limpa();
-        while ( ehnum(N)!=1 || strlen(N) > 2 && strcmp(N,"100")!=0 )
-        {   printf("O valor inserido nao eh um numero valido. Tente novamente: ");  scanf("%s", N); limpa();   }
-        n = atoi(N);
+        printf("Insira o numero de alunos a serem registrados: ");
+        while ( scanf(" %d", &n) != 1 || scanf(".%d", &lixo) == 1 || n > 100 || n < 0 )
+        {   limpa(); printf("O valor inserido nao eh um numero valido. Tente novamente: "); }
+        //n = atoi(N);
         printf("Preencha as proximas %d linhas com os dados dos alunos: \n"
-                "Ex: Matheus 10.0 10.0\n", n);
+                "\tEx: Matheus 10.0 10.0\n", n);
         for (i = 0 ; i < n ; i++)
         {
-            while (scanf("%s", alunos[i].nome) == 0 || scanf("%lf", &alunos[i].n1) == 0 || scanf("%lf", &alunos[i].n2) == 0
+            while (scanf(" %s", alunos[i].nome) != 1 || scanf(" %lf", &alunos[i].n1) != 1 || scanf(" %lf", &alunos[i].n2) != 1
                          || alunos[i].n1 > 10 || alunos[i].n2 > 10 || alunos[i].n1 < 0 || alunos[i].n2 < 0)
             {
                 limpa();
