@@ -4,8 +4,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <string.h>
-//#include <ctype.h>
 
 void limpartela()
 {
@@ -15,17 +13,6 @@ void limpartela()
         system("cls");
     #elif _WIN64
         system("cls");
-    #endif
-}
-
-void pausartela()
-{
-    #ifdef __unix__
-        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
-    #elif _WIN32
-        system("pause");
-    #elif _WIN64
-        system("pause");
     #endif
 }
 
