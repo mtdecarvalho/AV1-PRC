@@ -7,6 +7,28 @@
 //#include <string.h>
 //#include <ctype.h>
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __unix__
+        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+    #elif _WIN32
+        system("pause");
+    #elif _WIN64
+        system("pause");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -19,11 +41,12 @@ int main ()
     
     do
     {
-        printf("Insira o numero positivo e inteiro a ser analisado: "); 
+        limpartela();
+        printf("\nInsira o numero positivo e inteiro a ser analisado: "); 
         while (scanf(" %d", &res) != 1 || scanf(".%c", &j) == 1 || res < 0)
         {
-            printf("\tO valor inserido eh invalido!\n"
-                    "Insira o numero positivo e inteiro a ser analisado: "); limpa();
+            printf("\n\tO valor inserido eh invalido!\n"
+                    "\nInsira o numero positivo e inteiro a ser analisado: "); limpa();
         }
         limpa();
         for (i = 1; i<=res && multiplo<1; i++)
@@ -41,21 +64,3 @@ int main ()
     
     return 0;
 }
-
-//int ehnum ( char a[] )
-//{
-//    int i;
-//    for (i = 0 ; i < strlen(a) ; i++)
-//        if ( !isdigit(a[i]) )
-//            return 0;
-//        else if (a[0] == '0' || a[0] == '\n')
-//            return 0;
-//    return 1;
-//}
-        
-        //scanf("%s", s);
-        //while ( ehnum(s) != 1 )
-        //{
-        //    printf("O valor inserido nao eh valido. Insira um numero valido: "); scanf("%s", s);
-        //}
-        //res = atoi(s);
