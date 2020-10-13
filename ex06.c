@@ -12,6 +12,28 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __unix__
+        system("read -n1 -r -p \"Pressione qualquer tecla para continuar...\" key");
+    #elif _WIN32
+        system("pause");
+    #elif _WIN64
+        system("pause");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -34,13 +56,12 @@ int main ()
     "| 4 |       Eggburguer           | R$ 7.00 |\n"
     "| 5 |       Podrão               | R$ 9.00 |\n"
     "|------------------------------------------|\n"
-    "| 9 |       Mostrar cardapio               |\n"
     "| 0 |       Encerrar programa              |\n" 
     "|__________________________________________|");
-    puts(cardapio);
     
     do
     {
+        limpartela();   puts(cardapio);
         printf("\nInsira o numero de seu pedido: ");
         while ( scanf(" %d", &numpedido) == 0 || scanf(".%d", &k) == 1)
         {
@@ -64,13 +85,11 @@ int main ()
             case 5: val = 9.00; printf("\nInsira a quantidade de seu pedido: "); scanf("%d", &qtdpedido); 
                                 if ( qtdpedido == 0 ) break;
                                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }
-            case 9: puts(cardapio); break;
-            case 0: printf("\nEncerrando programa...\n"); break;
+            case 0: printf("\nPrograma encerrado.\n\n"); return 0;
             default: printf("\nPor favor insira um numero de pedido valido!\n"); break;
         }
-        if (qtdpedido == 0) { printf("\nEncerrando programa...\n"); break; }
+        if (qtdpedido == 0) { printf("\nPrograma encerrado.\n\n"); return 0; }
+        puts("");    pausartela();   limpartela();
     }
     while (numpedido != 0);
-    
-    return 0;
 }
