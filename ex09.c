@@ -20,17 +20,6 @@ void limpartela()
     #endif
 }
 
-void pausartela()
-{
-    #ifdef __unix__
-        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
-    #elif _WIN32
-        system("pause");
-    #elif _WIN64
-        system("pause");
-    #endif
-}
-
 void limpa ()
 {
     while ((getchar()) != '\n');
