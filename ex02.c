@@ -5,6 +5,17 @@
 #include <stdio.h>
 #include <string.h>
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -16,7 +27,8 @@ int main ()
     int i, tam, k = 0;
     do
     {
-        printf("Insira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
+        limpartela();
+        printf("\nInsira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
         scanf(" %[^\n]s", frase1);
         while ( strlen(frase1) <= 1 )
         {
