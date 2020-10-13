@@ -9,6 +9,28 @@
 
 #define max 100
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __unix__
+        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+    #elif _WIN32
+        system("pause");
+    #elif _WIN64
+        system("pause");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -22,13 +44,14 @@ int main ()
     
     do
     {
-        printf("Insira os valores a serem analisados (min. 1, max. 100):\n"
+        limpartela();
+        printf("\nInsira os valores a serem analisados (min. 1, max. 100):\n"
                 "\t(Para encerrar a leitura, insira 0)\n\n");
         for ( i = 0 ; i < 100 ; i++ )
         {
             while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0 )
             {
-                printf("Nenhum valor valido foi inserido. Tente novamente: \n");
+                printf("\nOs valores foram inseridos incorretamente. Tente novamente: \n\n");
                 limpa();
             } 
             if (n[i] == 0)  { i--; N = i; i = 99; }
@@ -42,15 +65,15 @@ int main ()
                 ex[0] = n[i];
         }
 
-        printf("Extremos: |%.2lf| e |%.2lf|\n", ex[0], ex[1]);
+        printf("\nExtremos: |%.2lf| e |%.2lf|\n", ex[0], ex[1]);
         for (i = 0 ; i <= N ; i++)
         {
             if ( n[i] > ex[0] && n[i] < ex[1] )
-            {   media+=n[i]; k++; printf("%lf\n", media); }
+            {   media+=n[i]; k++; }
         }
         media/=k;
-        printf("A media dos valores sem seus extremos eh %.2lf.\n", media);
-        printf("Deseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
+        printf("\nA media dos valores sem seus extremos eh %.2lf.\n", media);
+        printf("\nDeseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
     }
     while (j == 's' || j == 'S');
     
