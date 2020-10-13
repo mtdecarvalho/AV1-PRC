@@ -11,6 +11,28 @@
 
 #define TAMMAX 1000
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
+void pausartela()
+{
+    #ifdef __unix__
+        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+    #elif _WIN32
+        system("pause");
+    #elif _WIN64
+        system("pause");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -24,11 +46,12 @@ int main ()
 
     do
     {
-        printf("Insira os dois numeros (positivos e inteiros) a serem comparados: ");
+        limpartela();
+        printf("\nInsira os dois numeros (positivos e inteiros) a serem comparados: ");
         while ( scanf(" %d", &n1) != 1 || scanf(" %d", &n2) != 1 || n1 < 0 || n2 < 0 )
         { 
-            printf("Valores invalidos! Tente novamente:\n"
-                    "Insira os dois numeros (positivos e inteiros) a serem comparados: "); limpa();
+            printf("\nValores invalidos! Tente novamente:\n"
+                    "\nInsira os dois numeros (positivos e inteiros) a serem comparados: "); limpa();
         }
         for (i = 1 , k = 0 ; i <= n1 ; i++)
         {

@@ -73,9 +73,9 @@ int main ()
         }
         media/=k;
         printf("\nA media dos valores sem seus extremos eh %.2lf.\n", media);
-        printf("\nDeseja continuar? [s / n]\n"); scanf(" %c", &j); media = 0;
+        printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &j); media = 0;
     }
     while (j == 's' || j == 'S');
-    
+
     return 0;
 }
