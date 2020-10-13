@@ -9,6 +9,17 @@
 #include <string.h>
 #include <ctype.h>
 
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
+
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -22,7 +33,7 @@ int main ()
     
     do
     {
-        printf("Insira a frase a ser modificada:\n\n");
+        limpartela(); printf("\nInsira a frase a ser modificada:\n\n");
         
         do
         {
