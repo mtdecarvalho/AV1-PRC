@@ -6,6 +6,7 @@
 //    media = (3 + 4 + 3 + 4)/4 = 14/4 = 3.5
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define max 100
 
@@ -34,7 +35,7 @@ int main ()
     do
     {
         limpartela();
-        printf("\nInsira os valores a serem analisados (min. 1, max. 100):\n"
+        printf("Insira os valores a serem analisados (min. 1, max. 100):\n"
                 "\t(Para encerrar a leitura, insira 0)\n\n");
         for ( i = 0 ; i < 100 ; i++ )
         {
@@ -45,6 +46,7 @@ int main ()
             } 
             if (n[i] == 0)  { i--; N = i; i = 99; }
         }
+        limpa();
         ex[0] = n[0]; ex[1] = n[0];
         for (i = 0 ; i <= N ; i++)
         {
@@ -62,7 +64,7 @@ int main ()
         }
         media/=k;
         printf("\nA media dos valores sem seus extremos eh %.2lf.\n", media);
-        printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &j); media = 0;
+        printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &j); media = 0; k = 0;
     }
     while (j == 's' || j == 'S');
 
