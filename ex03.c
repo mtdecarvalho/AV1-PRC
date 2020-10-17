@@ -30,7 +30,6 @@ int main ()
 {
     int i, tam, k;
     char frase[100], j;
-    char * palavra;
     
     do
     {
@@ -49,31 +48,27 @@ int main ()
         }
         while (k == strlen(frase));
         
-        //palavra = strtok(frase, " -");
         printf("\nFrase modificada:\n\n");
-        //while (palavra != NULL)
-        //{
-            for(i = 0; i < strlen(frase) ; i++)
+        for(i = 0; i < strlen(frase) ; i++)
+        {
+            if (i == 0)
             {
-                if (i == 0)
-                {
-                    if (frase[i] >= 97 && frase[i] <= 122)
-                        frase[i]-=32;
-                }
-                else if ( !isalpha(frase[i-1]) )
-                {
-                    if (frase[i] >= 97 && frase[i] <= 122)
-                        frase[i]-=32;
-                }
-                else
-                {
-                    if (frase[i] >= 65 && frase[i] <= 90)
-                        frase[i]+=32;
-                }
+                if (frase[i] >= 97 && frase[i] <= 122)
+                    frase[i]-=32;
             }
-            //printf("%s ", palavra); palavra = strtok(NULL, " -");
-        //}
+            else if ( !isalpha(frase[i-1]) )
+            {
+                if (frase[i] >= 97 && frase[i] <= 122)
+                    frase[i]-=32;
+            }
+            else
+            {
+                if (frase[i] >= 65 && frase[i] <= 90)
+                    frase[i]+=32;
+            }
+        }
         printf("%s\n", frase);
+        
         printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &j); limpa();
     }
     while (j == 's' || j == 'S');
