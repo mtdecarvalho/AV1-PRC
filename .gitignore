@@ -13,6 +13,7 @@ ex10
 *.exe
 ex01FINAL.c
 ex01ver2.c
+teste*
 
 # Packages #
 ############
