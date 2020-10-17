@@ -2,8 +2,21 @@
 //   caso nao seja possivel multiplicar escreva "Matrizes incompativeis para a multiplicacao!"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX 100
+
+void limpartela()
+{
+    #ifdef __unix__
+        system("clear");
+    #elif _WIN32
+        system("cls");
+    #elif _WIN64
+        system("cls");
+    #endif
+}
 
 void limpa ()
 {
@@ -18,19 +31,20 @@ int main ()
 
     do
     {
+        limpartela();
         do
         {
-            printf("\nInsira o numero de linhas e colunas da primeira matriz: ");
+            printf("Insira o numero de linhas e colunas da primeira matriz: ");
             while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] < 0 || coluna[0] < 0  || linha[0] > 100 || coluna[0] > 100 )
             {
-                printf("Valores invalidos! Tente novamente.\n"
-                        "Insira o numero de linhas e colunas da primeira matriz: "); limpa();
+                printf("\nValores invalidos! Tente novamente.\n"
+                        "\nInsira o numero de linhas e colunas da primeira matriz: "); limpa();
             }
             printf("\nInsira o numero de linhas e colunas da segunda matriz: ");
             while ( scanf(" %d", &linha[1]) != 1 || scanf(" %d", &coluna[1]) != 1 || linha[1] < 0 || coluna[1] < 0  || linha[1] > 100 || coluna[1] > 100 )
             {
-                printf("Valores invalidos! Tente novamente.\n"
-                        "Insira o numero de linhas e colunas da segunda matriz: "); limpa();
+                printf("\nValores invalidos! Tente novamente.\n"
+                        "\nInsira o numero de linhas e colunas da segunda matriz: "); limpa();
             }
             if ( coluna[0] != linha[1] )
                 printf("\nMatrizes incompativeis para multiplicacao!\n");
@@ -40,15 +54,19 @@ int main ()
         printf("\n\t\t\tMATRIZ 1\n");
         printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[0], coluna[0]);
         for (i = 0 ; i < linha[0] ; i++)
+        {
             for (j = 0 ; j < coluna[0] ; j++)
                 scanf(" %lf", &M1[i][j]);
-        limpa();    
+            limpa();    
+        }
         printf("\n\t\t\tMATRIZ 2\n");
         printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[1], coluna[1]);
         for (i = 0 ; i < linha[1] ; i++)
+        {
             for (j = 0 ; j < coluna[1] ; j++)
                 scanf(" %lf", &M2[i][j]);
-        limpa();
+            limpa();
+        }
 
         for (i = 0 ; i < linha[0] ; i++)    
             for (j = 0 ; j < coluna[1] ; j++)
@@ -59,7 +77,7 @@ int main ()
                 res[i][j] = somaprod;
             }    
 
-        printf("\n\t\t\tRESULTADO\n");
+        printf("\n\t\t\tRESULTADO:\n");
         for (i = 0 ; i < linha[0] ; i++)
         {
             for (j = 0 ; j < coluna[1] ; j++)
