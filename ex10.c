@@ -34,6 +34,7 @@ void pausartela()
     #endif
 }
 
+
 int ehvalido ( char a[] )
 {
     int i = 0, k = 0;
