@@ -26,7 +26,7 @@ void limpartela()
 void pausartela()
 {
     #ifdef __unix__
-        system("read -n1 -r -p \"Pressione qualquer tecla para continuar...\" key");
+        system("read -r -p \"Pressione Enter para continuar...\" key");
     #elif _WIN32
         system("pause");
     #elif _WIN64
@@ -63,11 +63,11 @@ int main ()
     {
         limpartela();   puts(cardapio);
         printf("\nInsira o numero de seu pedido: ");
-        while ( scanf(" %d", &numpedido) == 0 || scanf(".%d", &k) == 1)
+        while ( scanf(" %d", &numpedido) == 0 )
         {
-            limpa();
-            printf("\nValor invalido. Insira um numero valido: ");
+            limpa(); printf("\nPor favor insira um numero valido: ");
         }
+        limpa();
         switch(numpedido)
         { 
             case 1: val = 4.50; printf("\nInsira a quantidade de seu pedido: "); scanf("%d", &qtdpedido);
@@ -89,7 +89,7 @@ int main ()
             default: printf("\nPor favor insira um numero de pedido valido!\n"); break;
         }
         if (qtdpedido == 0) { printf("\nPrograma encerrado.\n\n"); return 0; }
-        puts("");    pausartela();   limpartela();
+        limpa();    puts("");    pausartela();   limpartela(); 
     }
     while (numpedido != 0);
 }
