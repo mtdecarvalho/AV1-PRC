@@ -4,6 +4,7 @@
 //                     media = (Nota1 + 2*Nota2) / 3
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
@@ -35,37 +36,40 @@ void limpa ()
 typedef struct {
     char nome[30];
     double n1, n2, media;
-} Taluno;
+} tipoalunos;
 
 int main ()
 {
     int n, i = 0, k, lixo;
     char N[4], j;
     double mediaturma;
-    Taluno alunos[100];
+    tipoalunos alunos[100];
     
     do
     {
-        limpartela();   printf("\nInsira o numero de alunos a serem registrados: ");
+        limpartela();   printf("Insira o numero de alunos a serem registrados: ");
         while ( scanf(" %d", &n) != 1 || scanf(".%d", &lixo) == 1 || n > 100 || n <= 0 )
         {   limpa(); printf("O valor inserido nao eh um numero valido. Tente novamente: "); }
-        //n = atoi(N);
-        printf("\nPreencha as proximas %d linhas com os dados dos alunos: \n"
-                "\tEx: Matheus 10.0 10.0\n\n", n);
+        if (n > 1)
+            printf("\nPreencha as proximas %d linhas com os dados dos %d alunos: \n"
+                    "|NOTA MIN: 0| |NOTA MAX: 10|\tEx: Matheus 10.0 10.0\n\n", n, n);
+        else
+            printf("\nPreencha a proxima linha com os dados do unico aluno:\n"
+                    "|NOTA MIN: 0| |NOTA MAX: 10|\tEx: Matheus 10.0 10.0\n\n");
+        limpa();
         for (i = 0 ; i < n ; i++)
         {
             while (scanf(" %s", alunos[i].nome) != 1 || scanf(" %lf", &alunos[i].n1) != 1 || scanf(" %lf", &alunos[i].n2) != 1
                          || alunos[i].n1 > 10 || alunos[i].n2 > 10 || alunos[i].n1 < 0 || alunos[i].n2 < 0)
             {
                 limpa();
-                printf("\nOs dados foram inseridos incorretamente. Favor seguir o modelo:\n\tEx: Matheus 10.0 10.0\n\n");
+                printf("\nOs dados foram inseridos incorretamente. Favor seguir o modelo:\n|NOTA MIN: 0| |NOTA MAX: 10|\tEx: Matheus 10.0 10.0\n\n");
             }
             limpa();
             alunos[i].media = (alunos[i].n1 + 2*alunos[i].n2) / 3;
         }
         for (i = 0 ; i < n ; i++)
         {  
-            //printf("\t%s  %lf", alunos[i].nome, alunos[i].media);
             mediaturma += alunos[i].media;
         }
         mediaturma /= n; printf("\nMedia da turma: %.2lf\n\n", mediaturma);
@@ -76,7 +80,7 @@ int main ()
                 printf("Nome: %s\t\tMedia: %.2lf\n", alunos[i].nome, alunos[i].media); k++;
             }
             else if (i == n-1 && k == 0)
-                printf("\nNao ha nenhum aluno com media maior do que a media da turma.\n");
+                printf("Nao ha nenhum aluno com media maior do que a media da turma.\n");
         printf("\nDeseja reiniciar o programa? [s / n]\t"); scanf(" %c", &j); limpa();
         mediaturma = 0; memset(alunos, 0 , sizeof(alunos));
     }
