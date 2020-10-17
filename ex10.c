@@ -26,7 +26,7 @@ void limpartela()
 void pausartela()
 {
     #ifdef __unix__
-        system("read -n1 -r -p \"Pressione qualquer tecla...\" key");
+        system("read -r -p \"Pressione qualquer tecla...\" key");
     #elif _WIN32
         system("pause");
     #elif _WIN64
@@ -221,6 +221,7 @@ int main ()
             perdeu = 1; k++;
         }
         while (vida > 0 && strcmp(secreta2, secreta) != 0);
+        
         printf("\tVidas: %d\tChutes: %s\n\n", vida, chutes);
         forca(vida == 0 ? 0 : 6);
         printf("\t%s\n", secreta2);
