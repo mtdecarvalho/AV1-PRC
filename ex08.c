@@ -36,7 +36,7 @@ int main ()
     do
     {
         limpartela();
-        printf("\nInsira os dois numeros (positivos e inteiros) a serem comparados: ");
+        printf("Insira os dois numeros (positivos e inteiros) a serem comparados: ");
         while ( scanf(" %d", &n1) != 1 || scanf(" %d", &n2) != 1 || n1 < 0 || n2 < 0 )
         { 
             printf("\nValores invalidos! Tente novamente:\n"
