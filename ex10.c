@@ -81,7 +81,7 @@ void regras()
     "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
 }
-
+ 
 void forca( int vida )
 {
     switch (vida)
