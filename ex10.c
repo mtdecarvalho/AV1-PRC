@@ -77,8 +77,9 @@ void regras()
     printf(
     "\t# Regras #\n\n"
     "# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.\n"
-    "# 2 # A frase secreta escondera apenas letras de A ate Z (acentos nao incluidos). Qualquer outro caractere sera revelado.\n"
-    "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
+    "# 2 # O tamanho maximo da frase secreta eh de 100 caracteres.\n"
+    "# 3 # A frase secreta escondera apenas letras de A ate Z (acentos nao incluidos). Qualquer outro caractere sera revelado.\n"
+    "# 4 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
 }
  
@@ -176,17 +177,19 @@ int main ()
             scanf(" %c", &j); limpa();
             switch (j)
             {
-                case '2': regras(); break;
                 case '1': break;
+                case '2': regras(); break;
                 case '0': limpartela(); return 0;
             }
         }
         while (j != '1');
         limpartela();
 
-        printf("Insira a frase secreta: "); scanf(" %[^\n]s", secreta); limpa();
-        while ( ehvalido(secreta) != 1)
-            {   printf("Frase invalida. Tente novamente: "); scanf(" %[^\n]s", secreta); limpa(); }
+        printf("Insira a frase secreta: "); // scanf(" %[^\n]s", secreta); 
+        fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+        while ( ehvalido(secreta) != 1  )
+            { memset(secreta, 0, tammax); printf("Frase invalida. Tente novamente: "); fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); } }
+        secreta[strlen(secreta)-1] = '\0';
         for (i = 0 ; i < strlen(secreta) ; i++)
         {
             if ( secreta[i] >= 97 && secreta[i] <= 122 )
