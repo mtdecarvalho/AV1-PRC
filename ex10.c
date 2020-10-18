@@ -210,7 +210,7 @@ int main ()
             limpartela();
             if (input >= 97 && input <= 122)
                 input-=32;
-            chutes[k] = input;
+            chutes[k] = input; chutes[k+1] = '\0';
             for (i = 0 ; i < strlen(secreta2) ; i++)
             {
                 if ( input == secreta[i] && input != secreta2[i] )
