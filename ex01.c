@@ -30,7 +30,7 @@ int main ()
     {
         multiplo = 0; limpartela();
         printf("Insira o numero positivo e inteiro a ser analisado: "); 
-        while (scanf(" %d", &res) != 1 || res < 0)
+        while (scanf(" %d", &res) != 1 )
         {
             printf("\n\tO valor inserido eh invalido!\n"
                     "\nInsira o numero positivo e inteiro a ser analisado: "); limpa();
