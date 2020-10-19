@@ -57,9 +57,9 @@ int main ()
             printf("\n\tInsira uma frase/palavra valida.\n"); fgets(frase1, tammax, stdin); 
             if (strlen(frase1) == tammax-1) 
                 limpa();
-            frase1[tam-1] = '\0'; tam = strlen(frase1);
+            frase1[strlen(frase1)-1] = '\0'; tam = strlen(frase1);
         }
-        
+
         strcpy(original, frase1); 
         for (i = 0; i < strlen(frase1) ; i++)
         {
