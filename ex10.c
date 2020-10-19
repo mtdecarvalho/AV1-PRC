@@ -51,24 +51,27 @@ void limpa()
     while ((getchar()) != '\n');
 }
 
-void menu()
+int menu()
 {
+    int a;
     limpartela();
     printf(
-            "\t      JOGO DA FORCA\n"
-            "\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t           /|\\    |\n"
-            "\t           / \\    |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"
-            "\t\t#MENU#\n"
-            "\t# 1 # Iniciar o jogo\n"
-            "\t# 2 # Mostrar regras\n"
-            "\t# 0 # Encerrar programa\n");
+            "\t\tJOGO DA FORCA\n\n"
+            "\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
+            "\t            /|\\   X\n"
+            "\t            / \\   X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"
+            "\t-----------MENU----------\n"
+            "\t| 1 | Iniciar o jogo    |\n"
+            "\t| 2 | Mostrar regras    |\n"
+            "\t| 0 | Encerrar programa |\n"
+            "\t-------------------------\n");
+            scanf(" %d", &a); limpa(); return a;
 }
 
 void regras()
@@ -83,158 +86,178 @@ void regras()
     pausartela();
 }
  
-void forca( int vida )
+void forca( int vida ) //"spritezinho" da forca
 {
     switch (vida)
     {
     case 6:
-    printf ("            _______\n"
-            "            |     |\n"
-            "                  |\n"
-            "                  |\n"
-            "                  |\n"
-            "      ____________|_\n"
-            "     /             /|\t______ O\n"
-            "    /_____________/ /\t_____ </V\n"
-            "    |_____________|/\t______V\\ \n\n");
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t                  X\n"
+            "\t                  X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\t______ O\n"
+            "\t    /_/_/_/_/_/_/_/|/\t_____ </V\n"
+            "\t    |_|_|_|_|_|_|_|/\t______V\\ \n\n");
             break;
     case 5:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t                  |\n"
-            "\t                  |\n"
-            "\t                  |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t                  X\n"
+            "\t                  X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"
             ); break;
     case 4:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t                  |\n"
-            "\t                  |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"); break;
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t            O     X\n"
+            "\t                  X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 3:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t            |     |\n"
-            "\t                  |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"); break;
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t            O     X\n"
+            "\t            |     X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 2:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t           /|     |\n"
-            "\t                  |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"); break;
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t            O     X\n"
+            "\t           /|     X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 1:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t           /|\\    |\n"
-            "\t                  |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"); break;
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t            O     X\n"
+            "\t           /|\\    X\n"
+            "\t                  X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 0:
-    printf ("\t            _______\n"
-            "\t            |     |\n"
-            "\t            O     |\n"
-            "\t           /|\\    |\n"
-            "\t           / \\    |\n"
-            "\t      ____________|_\n"
-            "\t     /             /|\n "
-            "\t    /_____________/ /\n"
-            "\t    |_____________|/\n\n"); break;
+    printf ("\t            XXXXXXX\n"
+            "\t            X     X\n"
+            "\t            O     X\n"
+            "\t           /|\\    X\n"
+            "\t           / \\    X\n"
+            "\t      ____________X_\n"
+            "\t     / / / / / / / /|\n"
+            "\t    /_/_/_/_/_/_/_/|/\n"
+            "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     }
 }
 
 int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, j, cont;
-    int vida = 5, i = 0, perdeu = 1, k = 0;
+    int vida = 5, i = 0, perdeu = 1, k = 0, acabou, l;
 
-    while (1) 
+    while (l == 0) 
     {
-        k = 0; vida = 5; memset(chutes, 0, strlen(chutes));
+        k = 0; vida = 5; memset(chutes, 0, strlen(chutes)); acabou = 0; l = 0;
 
-        do
+        while(acabou!=1)
         {
-            menu();
-            scanf(" %c", &j); limpa();
-            switch (j)
+            switch ( menu() )
             {
-                case '1': break;
-                case '2': regras(); break;
-                case '0': limpartela(); return 0;
+                case 1: acabou = 1; break;
+                case 2: regras(); break;
+                case 0: limpartela(); l = 1; acabou = 1; break;
             }
-        }
-        while (j != '1');
-        limpartela();
-
-        printf("Insira a frase secreta: "); // scanf(" %[^\n]s", secreta); 
-        fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
-        while ( ehvalido(secreta) != 1  )
-            { memset(secreta, 0, tammax); printf("Frase invalida. Tente novamente: "); fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); } }
-        secreta[strlen(secreta)-1] = '\0';
-        for (i = 0 ; i < strlen(secreta) ; i++)
-        {
-            if ( secreta[i] >= 97 && secreta[i] <= 122 )
-                secreta[i] -= 32;
-        }   strcpy(secreta2, secreta);
-        for (i = 0 ; i < strlen(secreta2) ; i ++)
-        {
-            if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
-                secreta2[i] = '_';
         }
 
         limpartela();
-
-        do
-        {
-            printf("\tVidas: %d\tChutes: %s\n\n", vida, chutes);
-            forca(vida);
-            printf("\t%s\n", secreta2);
-            printf("\n\tInsira a letra: "); scanf(" %c", &input);
-            limpa();
-            limpartela();
-            if (input >= 97 && input <= 122)
-                input-=32;
-            chutes[k] = input; chutes[k+1] = '\0';
-            for (i = 0 ; i < strlen(secreta2) ; i++)
-            {
-                if ( input == secreta[i] && input != secreta2[i] )
-                {    secreta2[i] = input; perdeu = 0;   }
-            }
-            if (perdeu == 1)
-                vida-=1;
-            perdeu = 1; k++;
-        }
-        while (vida > 0 && strcmp(secreta2, secreta) != 0);
         
-        printf("\tVidas: %d\tChutes: %s\n\n", vida, chutes);
-        forca(vida == 0 ? 0 : 6);
-        printf("\t%s\n", secreta2);
-        switch (vida)
+        if (l == 0)
         {
-            case 0: printf("\n\t\tGame Over."); break;
-            default:
-            printf("\n\t\tVitoria!\n");
-            break;
+            //leitura de frase
+            printf("Insira a frase secreta: "); 
+            fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+            while ( ehvalido(secreta) != 1  )
+            {
+                memset(secreta, 0, tammax);
+                printf("Frase invalida. Tente novamente: ");
+                fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+            }
+            secreta[strlen(secreta)-1] = '\0';
+
+            //manipulacao da frase
+            for (i = 0 ; i < strlen(secreta) ; i++)
+            {
+                if ( secreta[i] >= 97 && secreta[i] <= 122 )
+                    secreta[i] -= 32;
+            }   strcpy(secreta2, secreta);
+            for (i = 0 ; i < strlen(secreta2) ; i ++)
+            {
+                if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
+                    secreta2[i] = '_';
+            }
+
+            limpartela();
+
+            //começo de jogo
+            do
+            {
+                //informacoes da tela
+                printf("\tVidas: %d\t\tChutes: %s\n\n", vida, chutes);
+                forca(vida);
+                printf("\t%s\n", secreta2);
+                //leitura de chute
+                printf("\n\tInsira a letra: "); scanf(" %c", &input);
+                limpa();    limpartela();
+
+                //manipulaçao de chute
+                if (input >= 97 && input <= 122)
+                    input-=32;
+                chutes[k] = input; chutes[k+1] = '\0';
+
+                //comparaçao de chute com elementos da frase
+                for (i = 0 ; i < strlen(secreta2) ; i++)
+                {
+                    if ( input == secreta[i] && input != secreta2[i] )
+                    {    secreta2[i] = input; perdeu = 0;   }
+                }
+
+                //condiçao de erro de chute
+                if (perdeu == 1)
+                    vida-=1;
+                
+                perdeu = 1; k++;
+            }
+            while (vida > 0 && strcmp(secreta2, secreta) != 0);
+            
+            //tela de fim de jogo
+            printf("\tVidas: %d\t\tChutes: %s\n\n", vida, chutes);
+            forca(vida == 0 ? 0 : 6); //se vida = 0, mostra um desenho, se nao, mostra outro
+            printf("\t%s\n", secreta2);
+            //mensagem
+            switch (vida)
+            {
+                case 0: printf("\n\t\tGame Over."); break;
+                default:
+                printf("\n\t\tVitoria!\n");
+                break;
+            }
+            printf("\nFim de jogo.\n"); pausartela();
         }
-        printf("\nFim de jogo.\n"); pausartela();
     }
+    return 0;
 }
