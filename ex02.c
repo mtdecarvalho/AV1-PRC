@@ -29,7 +29,7 @@ int main ()
     do
     {
         limpartela();
-        printf("\nInsira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
+        printf("Insira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
         scanf(" %[^\n]s", frase1);
         while ( strlen(frase1) <= 1 )
         {
