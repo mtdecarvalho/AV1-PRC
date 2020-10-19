@@ -33,7 +33,7 @@ int main ()
     
     do
     {
-        limpartela(); printf("\nInsira a frase a ser modificada:\n\n");
+        limpartela(); printf("Insira a frase a ser modificada:\n\n");
         
         do
         {
