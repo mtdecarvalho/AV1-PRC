@@ -20,17 +20,22 @@ void limpartela()
     #endif
 }
 
-int ehvalido (char a[])
+int analise(char a[])
 {
-    int i, tam, k = 0;
-    tam = strlen(a);
-    for (i = 0; i < tam ; i++)
-        if ( !isalpha(a[i]) )
+    int i, k = 0;
+    if (a[strlen(a)-1] == '\n')
+        a[strlen(a)-1] = '\0';
+    for (i=0;a[i] != '\0';i++)
+        if (isspace(a[i]))
             k++;
-    if (k == tam)
-        return 0;
-    else
-        return 1;
+    if ( k == strlen(a) )
+        return 2;
+    for (i=0;i<strlen(a);i++)
+    {
+        if ( !isalpha(a[i]) && !isspace(a[i]) && !ispunct(a[i]) && !isdigit(a[i]) )
+        {    limpartela(); printf("Frase invalida! \"%s\" possui um ou mais caracteres invalidos.\n\n", a); return 0;   }
+    }
+    return 1;
 }
 
 void limpa ()
@@ -41,24 +46,23 @@ void limpa ()
 int main ()
 {
     char frase1[tammax], frase2[tammax], temp, original[tammax], cont;
-    int i, tam, k = 0;
+    int i, tam, k = 0, val;
     do
     {
         limpartela();
-        printf("Insira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
 
-        fgets(frase1, tammax, stdin);
-        if (strlen(frase1) == tammax-1) 
-            limpa();
-        frase1[strlen(frase1)-1] = '\0'; tam = strlen(frase1);
-        
-        while ( ehvalido(frase1) != 1 )
+        do
         {
-            printf("\n\tInsira uma frase/palavra valida.\n"); fgets(frase1, tammax, stdin); 
+            if (analise(frase1) == 2) limpartela();
+            printf("Insira a%s frase/palavra a ser analisada: ", cont == 's' || cont == 'S' ? " proxima" : "");
+            fgets(frase1, tammax, stdin);
             if (strlen(frase1) == tammax-1) 
                 limpa();
-            frase1[strlen(frase1)-1] = '\0'; tam = strlen(frase1);
         }
+        while( analise(frase1) != 1 );
+        
+        //frase1[strlen(frase1)-1] = '\0';
+        tam = strlen(frase1);
 
         strcpy(original, frase1); 
         for (i = 0; i < strlen(frase1) ; i++)
