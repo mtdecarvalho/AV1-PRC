@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
+#include <math.h>
 
 #define MAX 100
 
@@ -17,15 +17,6 @@ void limpartela()
     #elif _WIN64
         system("cls");
     #endif
-}
-
-int ehnum ( char a[] )
-{
-    int i;
-    for (i = 0 ; i < strlen(a) ; i++)
-        if ( !isdigit(a[i]) )
-            return 0;
-    return 1;
 }
 
 void limpa ()
@@ -41,13 +32,13 @@ int main ()
 
     do 
     {
-            limpartela();
+        limpartela();
         do
         {
             printf("Insira o numero de linhas e colunas da primeira matriz: ");
             while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] < 0 || coluna[0] < 0  || linha[0] > 100 || coluna[0] > 100 )
             {
-                printf("\nValores invalidos! Tente novamente.\n"
+                printf("\n\tValores invalidos! Tente novamente.\n"
                         "\nInsira o numero de linhas e colunas da primeira matriz: "); limpa();
             }
             printf("\nInsira o numero de linhas e colunas da segunda matriz: ");
@@ -57,24 +48,35 @@ int main ()
                         "\nInsira o numero de linhas e colunas da segunda matriz: "); limpa();
             }
             if ( linha[0] != linha[1] || coluna[0] != coluna[1] )
-                printf("\nMatrizes incompativeis para a soma!\n");
+                printf("\n\tMatrizes incompativeis para a soma!\n\n");
         }
         while ( linha[0] != linha[1] || coluna[0] != coluna[1] );
 
         printf("\n\t\t\tMATRIZ 1\n");
-        printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[0], coluna[0]);
+        printf("Preencha com os valores da matriz [%d linhas x %d colunas]:\n", linha[0],coluna[0]);
         for (i = 0 ; i < linha[0] ; i++)
         {
+            printf("Linha %d: ", i+1);
             for (j = 0 ; j < coluna[0] ; j++)
-                scanf(" %lf", &M1[i][j]);
+            while (scanf(" %lf", &M1[i][j]) != 1)
+            {
+                printf("Valor invalido detectado na coluna %d. Digite um valor valido para esta coluna:\n", j+1);
+                limpa();
+            }
             limpa();
         }
+        //limpa();
         printf("\n\t\t\tMATRIZ 2\n");
-        printf("Preencha as proximas %d linhas com os valores das %d colunas:\n", linha[1], coluna[1]);
+        printf("Preencha com os valores da matriz [%d linhas x %d colunas]:\n", linha[1],coluna[1]);
         for (i = 0 ; i < linha[1] ; i++)
         {
+            printf("Linha %d: ", i+1);
             for (j = 0 ; j < coluna[1] ; j++)
-                scanf(" %lf", &M2[i][j]);
+                while (scanf(" %lf", &M2[i][j]) != 1)
+                {
+                    printf("Valor invalido detectado na coluna %d. Digite um valor valido para esta coluna:\n", j+1);
+                    limpa();
+                }
             limpa();
         }
 
