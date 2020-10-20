@@ -168,7 +168,7 @@ void forca( int vida ) //"spritezinho" da forca
 int main ()
 {
     char secreta[tammax], secreta2[tammax], chutes[tammax], input, j, cont;
-    int vida = 5, i = 0, perdeu = 1, k = 0, acabou, l;
+    int vida = 5, i = 0, perdeu = 1, k = 0, acabou = 0, l = 0;
 
     while (l == 0) 
     {
