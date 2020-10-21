@@ -36,7 +36,7 @@ int main ()
         do
         {
             printf("Insira o numero de linhas e colunas da primeira matriz: ");
-            while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] < 0 || coluna[0] < 0  || linha[0] > 100 || coluna[0] > 100 )
+            while ( scanf(" %d", &linha[0]) != 1 || scanf(" %d", &coluna[0]) != 1 || linha[0] <= 0 || coluna[0] <= 0  || linha[0] > 100 || coluna[0] > 100 )
             {
                 printf("\n\tValores invalidos! Tente novamente.\n"
                         "\nInsira o numero de linhas e colunas da primeira matriz: "); limpa();
@@ -44,7 +44,7 @@ int main ()
             limpa();
             
             printf("\nInsira o numero de linhas e colunas da segunda matriz: ");
-            while ( scanf(" %d", &linha[1]) != 1 || scanf(" %d", &coluna[1]) != 1 || linha[1] < 0 || coluna[1] < 0  || linha[1] > 100 || coluna[1] > 100 )
+            while ( scanf(" %d", &linha[1]) != 1 || scanf(" %d", &coluna[1]) != 1 || linha[1] <= 0 || coluna[1] <= 0  || linha[1] > 100 || coluna[1] > 100 )
             {
                 printf("\n\tValores invalidos! Tente novamente.\n"
                         "\nInsira o numero de linhas e colunas da segunda matriz: "); limpa();
