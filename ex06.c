@@ -41,67 +41,68 @@ void limpa ()
 
 int main ()
 {
-    int numpedido, qtdpedido;
+    int numpedido, qtdpedido, fim;
     double val;
     char cardapio[] =
     ("\t\t __________________________________________\n"
     "\t\t|    BEM-VINDO AO CARVALHO'S FOODTRUCK!    |\n"
     "\t\t|------------------------------------------|\n"
-    "\t\t| Nº|          LANCHE            |  PREÇO  |\n"
+    "\t\t| N |          LANCHE            |  PRECO  |\n"
     "\t\t|------------------------------------------|\n"
     "\t\t| 1 |       Misto Quente         | R$ 4.50 |\n"
     "\t\t| 2 |       Queijo Quente        | R$ 4.00 |\n"
     "\t\t| 3 |       Hamburguer           | R$ 6.00 |\n"
     "\t\t| 4 |       Eggburguer           | R$ 7.00 |\n"
-    "\t\t| 5 |       Podrão               | R$ 9.00 |\n"
+    "\t\t| 5 |       Podrao               | R$ 9.00 |\n"
     "\t\t|------------------------------------------|\n"
     "\t\t| 0 |       Encerrar programa              |\n" 
     "\t\t|__________________________________________|");
     
     do
     {
-        limpartela();   puts(cardapio);
+        fim = 0;    limpartela();   puts(cardapio);
         printf("\nInsira o numero de seu pedido: ");
-        while ( scanf(" %d", &numpedido) == 0 )
+        while ( scanf(" %d", &numpedido) != 1 )
         {
             limpa(); printf("\nPor favor insira um numero valido.\n\n");
             pausartela(); limpartela(); puts(cardapio); printf("\nInsira o numero de seu pedido: ");
         }
         limpa();
+
         switch(numpedido)
         { 
+            case 0: fim = 1; break;
             case 1: val = 4.50; 
                 printf("\nInsira a quantidade de seu pedido: ");
-                while ( scanf(" %d", &qtdpedido) != 1 ) limpa();
-                if ( qtdpedido == 0 ) break;
+                while ( scanf(" %d", &qtdpedido) != 1 || qtdpedido < 0) { if (qtdpedido < 0) printf("Quantidade invalida. Tente novamente: "); limpa(); }
+                if ( qtdpedido == 0 ) { fim = 1; break; }
                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }   
             case 2: val = 4.00;
                 printf("\nInsira a quantidade de seu pedido: ");
-                while ( scanf(" %d", &qtdpedido) != 1) limpa();                 
-                if ( qtdpedido == 0 ) break;
+                while ( scanf(" %d", &qtdpedido) != 1 || qtdpedido < 0) { if (qtdpedido < 0) printf("Quantidade invalida. Tente novamente: "); limpa(); }
+                if ( qtdpedido == 0 ) { fim = 1; break; }
                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }
             case 3: val = 6.00;
                 printf("\nInsira a quantidade de seu pedido: "); 
-                while ( scanf(" %d", &qtdpedido) != 1) limpa(); 
-                if ( qtdpedido == 0 ) break;
+                while ( scanf(" %d", &qtdpedido) != 1 || qtdpedido < 0) { if (qtdpedido < 0) printf("Quantidade invalida. Tente novamente: "); limpa(); } 
+                if ( qtdpedido == 0 ) { fim = 1; break; }
                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }
             case 4: val = 7.00;
                 printf("\nInsira a quantidade de seu pedido: ");
-                while ( scanf(" %d", &qtdpedido) != 1) limpa(); 
-                if ( qtdpedido == 0 ) break;
+                while ( scanf(" %d", &qtdpedido) != 1 || qtdpedido < 0) { if (qtdpedido < 0) printf("Quantidade invalida. Tente novamente: "); limpa(); } 
+                if ( qtdpedido == 0 ) { fim = 1; break; }
                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }
             case 5: val = 9.00;
                 printf("\nInsira a quantidade de seu pedido: ");
-                while ( scanf(" %d", &qtdpedido) != 1) limpa(); 
-                if ( qtdpedido == 0 ) break;
+                while ( scanf(" %d", &qtdpedido) != 1 || qtdpedido < 0) { if (qtdpedido < 0) printf("Quantidade invalida. Tente novamente: "); limpa(); } 
+                if ( qtdpedido == 0 ) { fim = 1; break; }
                 else { val*=qtdpedido; printf("\nTotal a pagar: R$%.2lf\n", val); break; }
-            case 0: printf("\nPrograma encerrado.\n\n"); return 0;
             default: printf("\nNumero de pedido inexistente!\n\n"); pausartela(); break;
         }
+
         if (numpedido > 0 && numpedido <= 5 && qtdpedido != 0) { limpa();    puts("");    pausartela();   limpartela(); }
-        if (qtdpedido == 0) break;
     }
-    while (numpedido != 0 && qtdpedido != 0);
+    while (fim != 1);
     printf("\nPrograma encerrado.\n\n");
     return 0;
 }
