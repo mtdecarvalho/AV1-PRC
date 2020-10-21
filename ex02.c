@@ -61,7 +61,6 @@ int main ()
         }
         while( analise(frase1) != 1 );
         
-        //frase1[strlen(frase1)-1] = '\0';
         tam = strlen(frase1);
 
         strcpy(original, frase1); 
@@ -76,7 +75,7 @@ int main ()
         {
             temp = frase2[i]; frase2[i] = frase2[k]; frase2[k] = temp;
         }
-        printf("\n\t\"%s\"%s eh palindrome.\n", original, strcmp(frase2,frase1) == 0 ? "" : " nao"); //substitior por if/else?
+        printf("\n\t\"%s\"%s eh palindrome.\n", original, strcmp(frase2,frase1) == 0 ? "" : " nao");
         printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &cont); limpa();
     }
     while (cont == 's' || cont == 'S');
