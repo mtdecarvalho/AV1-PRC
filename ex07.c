@@ -8,6 +8,9 @@
 #include <ctype.h>
 #include <string.h>
 
+#define MAX 100
+#define NOMEMAX 30
+
 void limpartela()
 {
     #ifdef __unix__
@@ -34,7 +37,7 @@ void limpa ()
 }
 
 typedef struct {
-    char nome[30];
+    char nome[NOMEMAX];
     double n1, n2, media;
 } tipoalunos;
 
@@ -43,12 +46,12 @@ int main ()
     int n, i = 0, k, lixo;
     char N[4], j;
     double mediaturma;
-    tipoalunos alunos[100];
+    tipoalunos alunos[MAX];
     
     do
     {
         limpartela();   printf("Insira o numero de alunos a serem registrados: ");
-        while ( scanf(" %d", &n) != 1 || scanf(".%d", &lixo) == 1 || n > 100 || n <= 0 )
+        while ( scanf(" %d", &n) != 1 || n > MAX || n <= 0 )
         {   limpa(); printf("O valor inserido nao eh um numero valido. Tente novamente: "); }
         if (n > 1)
             printf("\nPreencha as proximas %d linhas com os dados dos %d alunos: \n"
