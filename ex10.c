@@ -91,8 +91,8 @@ void forca( int vida ) //"spritezinho" da forca
     switch (vida)
     {
     case 6:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
             "\t                  X\n"
             "\t                  X\n"
             "\t                  X\n"
@@ -102,8 +102,8 @@ void forca( int vida ) //"spritezinho" da forca
             "\t    |_|_|_|_|_|_|_|/\t______V\\ \n\n");
             break;
     case 5:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
             "\t                  X\n"
             "\t                  X\n"
             "\t                  X\n"
@@ -113,9 +113,9 @@ void forca( int vida ) //"spritezinho" da forca
             "\t    |_|_|_|_|_|_|_|/\n\n"
             ); break;
     case 4:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
-            "\t            O     X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
             "\t                  X\n"
             "\t                  X\n"
             "\t      ____________X_\n"
@@ -123,41 +123,41 @@ void forca( int vida ) //"spritezinho" da forca
             "\t    /_/_/_/_/_/_/_/|/\n"
             "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 3:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
-            "\t            O     X\n"
-            "\t            |     X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
+            "\t             |    X\n"
             "\t                  X\n"
             "\t      ____________X_\n"
             "\t     / / / / / / / /|\n"
             "\t    /_/_/_/_/_/_/_/|/\n"
             "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 2:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
-            "\t            O     X\n"
-            "\t           /|     X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
+            "\t            /|    X\n"
             "\t                  X\n"
             "\t      ____________X_\n"
             "\t     / / / / / / / /|\n"
             "\t    /_/_/_/_/_/_/_/|/\n"
             "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 1:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
-            "\t            O     X\n"
-            "\t           /|\\    X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
+            "\t            /|\\   X\n"
             "\t                  X\n"
             "\t      ____________X_\n"
             "\t     / / / / / / / /|\n"
             "\t    /_/_/_/_/_/_/_/|/\n"
             "\t    |_|_|_|_|_|_|_|/\n\n"); break;
     case 0:
-    printf ("\t            XXXXXXX\n"
-            "\t            X     X\n"
-            "\t            O     X\n"
-            "\t           /|\\    X\n"
-            "\t           / \\    X\n"
+    printf ("\t             XXXXXX\n"
+            "\t             X    X\n"
+            "\t             O    X\n"
+            "\t            /|\\   X\n"
+            "\t            / \\   X\n"
             "\t      ____________X_\n"
             "\t     / / / / / / / /|\n"
             "\t    /_/_/_/_/_/_/_/|/\n"
