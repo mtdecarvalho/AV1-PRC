@@ -102,7 +102,7 @@ int main ()
         if (numpedido > 0 && numpedido <= 5 && qtdpedido != 0) { limpa();    puts("");    pausartela();   limpartela(); }
         if (qtdpedido == 0) break;
     }
-    while (numpedido != 0 || qtdpedido == 0);
-    printf("\nPrograma encerrado.\n");
+    while (numpedido != 0 && qtdpedido != 0);
+    printf("\nPrograma encerrado.\n\n");
     return 0;
 }
