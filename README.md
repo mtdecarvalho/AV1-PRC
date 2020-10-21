@@ -1,21 +1,21 @@
 # TrabPRC1
 
-ex01 = 100%
+ex01 = COMPLETO (Embora nao suporte numeros muito grandes)
 
-ex02 = 100%
+ex02 = COMPLETO
 
-ex03 = 100%
+ex03 = COMPLETO
 
-ex06 = 100% = 0 bugs (?)
+ex04 = COMPLETO (Nao suporta numeros muito grandes)
 
-ex10 = 95% ##OPCIONAL
+ex05 = COMPLETO (Nao suporta numeros muito grandes)
 
-ex08 = 90%
+ex06 = COMPLETO 
 
-ex07 = 40%
+ex07 = COMPLETO
 
-ex04 = 0%
+ex08 = COMPLETO
 
-ex05 = 0%
+ex09 = COMPLETO
 
-ex09 = 0%
+ex10 = COMPLETO (Meu favorito) ##OPCIONAL
