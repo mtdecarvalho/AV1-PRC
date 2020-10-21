@@ -65,7 +65,7 @@ int main ()
             }
             limpa();
         }
-        //limpa();
+        
         printf("\n\t\t\tMATRIZ 2\n");
         printf("Preencha com os valores da matriz [%d linhas x %d colunas]:\n", linha[1],coluna[1]);
         for (i = 0 ; i < linha[1] ; i++)
@@ -80,7 +80,6 @@ int main ()
             limpa();
         }
 
-        //SOMATORIO
         for (i = 0 ; i < linha[1] ; i++)
             for (j = 0 ; j < coluna[1] ; j++)
                 res[i][j] = M1[i][j] + M2[i][j];
