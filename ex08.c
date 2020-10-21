@@ -42,6 +42,7 @@ int main ()
             printf("\nValores invalidos! Tente novamente:\n"
                     "\nInsira os dois numeros (positivos e inteiros) a serem comparados: "); limpa();
         }
+        limpa();
         for (i = 1 , k = 0 ; i <= n1 ; i++)
         {
             if (n1 % i == 0)
