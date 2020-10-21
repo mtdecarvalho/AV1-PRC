@@ -57,7 +57,7 @@ int main ()
                          || alunos[i].n1 > 10 || alunos[i].n2 > 10 || alunos[i].n1 < 0 || alunos[i].n2 < 0)
             {
                 limpa();
-                printf("\nOs dados foram inseridos incorretamente. Favor seguir o modelo:\n|NOTA MIN: 0| |NOTA MAX: 10|\tEx: Matheus 10.0 10.0\n\n");
+                printf("\nOs dados do aluno %d foram inseridos incorretamente. Favor seguir o modelo:\n|NOTA MIN: 0| |NOTA MAX: 10|\tEx: Matheus 10.0 10.0\n\n", i+1);
             }
             limpa();
             alunos[i].media = (alunos[i].n1 + 2*alunos[i].n2) / 3;
@@ -66,7 +66,7 @@ int main ()
         {  
             mediaturma += alunos[i].media;
         }
-        mediaturma /= n; printf("\nMedia da turma: %.2lf\n\n", mediaturma);
+        mediaturma /= n; limpartela(); printf("Media da turma: %.2lf\n\n", mediaturma);
         for (i = 0, k = 0 ; i < n ; i++)
             if (alunos[i].media > mediaturma)
             {   
