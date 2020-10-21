@@ -36,12 +36,14 @@ int main ()
     {
         limpartela();
         printf("Insira os valores a serem analisados (min. 1, max. 100):\n"
-                "\t(Para encerrar a leitura, insira 0)\n\n");
+                "\t\t(0 encerra a leitura!)\n\n");
         for ( i = 0 ; i < 100 ; i++ )
         {
             while ( (scanf(" %lf", &n[i]) != 1) || n[0] == 0 )
             {
-                printf("\nOs valores foram inseridos incorretamente. Tente novamente: \n\n");
+                if (n[0] == 0) printf("0 nao eh um valor valido. Tente novamente:\n");
+                else
+                    printf("\nO %d numero foi inserido incorretamente. Insira um numero valido para retomar a leitura: \n\n", i+1);
                 limpa();
             } 
             if (n[i] == 0)  { i--; N = i; i = 99; }
@@ -62,7 +64,8 @@ int main ()
             if ( n[i] > ex[0] && n[i] < ex[1] )
             {   media+=n[i]; k++; }
         }
-        media/=k;
+        if (k != 0 && media != 0) media/=k;
+        else media = 0;
         printf("\nA media dos valores sem seus extremos eh %.2lf.\n", media);
         printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &j); limpa(); media = 0; k = 0;
     }
