@@ -23,7 +23,7 @@ void limpa ()
 
 int main ()
 {
-    long int n, i;
+    int n, i;
     int multiplo;
     char k;
     
@@ -31,7 +31,7 @@ int main ()
     {
         multiplo = 0; limpartela();
         printf("Insira o numero positivo e inteiro a ser analisado: "); 
-        while (scanf(" %ld", &n) != 1 || n <= 0 )
+        while (scanf(" %d", &n) != 1 || n <= 0 )
         {
             limpartela();
             printf("\tO valor inserido eh invalido!\n"
@@ -44,9 +44,9 @@ int main ()
                 multiplo+=1;
 
         if (multiplo > 0 || n == 1)
-            printf("\n\tO numero %ld nao eh primo.\n", n);
+            printf("\n\tO numero %d nao eh primo.\n", n);
         else
-            printf("\n\tO numero %ld eh primo.\n", n);
+            printf("\n\tO numero %d eh primo.\n", n);
     
         printf("\nDeseja continuar? [s / n]\t"); scanf(" %c", &k); limpa();
     }
