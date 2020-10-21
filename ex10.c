@@ -36,11 +36,11 @@ void pausartela()
 
 int ehvalido ( char a[] )
 {
-    int i = 0, k = 0;
-    for (i = 0 ; i < strlen(a) ; i++)
+    int i = 0, k = 0, tam = strlen(a);
+    for (i = 0 ; i < tam ; i++)
         if ( !isalpha(a[i]) )
             k++;
-    if ( k == strlen(a) )
+    if ( k == tam )
         return 0;
     else
         return 1;
@@ -167,8 +167,8 @@ void forca( int vida ) //"spritezinho" da forca
 
 int main ()
 {
-    char secreta[tammax], secreta2[tammax], chutes[tammax], input, j, cont;
-    int vida = 5, i = 0, perdeu = 1, k = 0, acabou = 0, l = 0;
+    char secreta[tammax], secreta2[tammax], chutes[tammax], input;
+    int vida = 5, i = 0, perdeu = 1, k = 0, acabou = 0, l = 0, tam[3];
 
     while (l == 0) 
     {
@@ -198,16 +198,17 @@ int main ()
                 fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
             }
             secreta[strlen(secreta)-1] = '\0';
-
+            tam[0] = strlen(secreta);
             //manipulacao da frase
-            for (i = 0 ; i < strlen(secreta) ; i++)
+            for (i = 0 ; i < tam[0] ; i++)
             {
                 if ( secreta[i] >= 97 && secreta[i] <= 122 )
                     secreta[i] -= 32;
             }   strcpy(secreta2, secreta);
-            for (i = 0 ; i < strlen(secreta2) ; i ++)
+            tam[1] = strlen(secreta2);
+            for (i = 0 ; i < tam[1] ; i ++)
             {
-                if (secreta2[i] >= 65 && secreta2[i] <= 90 || secreta2[i] >= 97 && secreta2[i] <= 122)
+                if ( ( secreta2[i] >= 65 && secreta2[i] <= 90 ) || ( secreta2[i] >= 97 && secreta2[i] <= 122 ) )
                     secreta2[i] = '_';
             }
 
@@ -230,7 +231,7 @@ int main ()
                 chutes[k] = input; chutes[k+1] = '\0';
 
                 //comparaçao de chute com elementos da frase
-                for (i = 0 ; i < strlen(secreta2) ; i++)
+                for (i = 0 ; i < tam[1] ; i++)
                 {
                     if ( input == secreta[i] && input != secreta2[i] )
                     {    secreta2[i] = input; perdeu = 0;   }

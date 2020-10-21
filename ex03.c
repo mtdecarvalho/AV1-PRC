@@ -30,15 +30,16 @@ void limpa()
 
 int analise(char a[])
 {
-    int i, k = 0;
+    int tam, i, k = 0;
     if (a[strlen(a)-1] == '\n')
         a[strlen(a)-1] = '\0';
+    tam = strlen(a);
     for (i=0;a[i] != '\0';i++)
         if (isspace(a[i]))
             k++;
-    if ( k == strlen(a) )
+    if ( k == tam )
         return 2;
-    for (i=0;i<strlen(a);i++)
+    for (i=0;i<tam;i++)
     {
         if ( !isalpha(a[i]) && !isspace(a[i]) && !ispunct(a[i]) && !isdigit(a[i]) )
         {    limpartela(); printf("Frase invalida! \"%s\" possui um ou mais caracteres invalidos.\n\n", a); return 0;   }
@@ -48,7 +49,7 @@ int analise(char a[])
 
 int main ()
 {
-    int i, tam, k;
+    int i;//, tam;
     char frase[tammax], j;
     
     do
@@ -64,7 +65,7 @@ int main ()
                 limpa();
         }
         while ( analise(frase) != 1 );
-        tam = strlen(frase);
+        //tam = strlen(frase);
         printf("\nFrase modificada:\n\n");
         for(i = 0; frase[i] != '\0' ; i++)
         {

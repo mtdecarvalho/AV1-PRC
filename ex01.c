@@ -23,7 +23,7 @@ void limpa ()
 
 int main ()
 {
-    long int n, i, tam;
+    long int n, i;
     int multiplo;
     char k;
     

@@ -22,15 +22,6 @@ void limpartela()
     #endif
 }
 
-int ehnum ( char a[] )
-{
-    int i;
-    for (i = 0 ; i < strlen(a) ; i++)
-        if ( !isdigit(a[i]) )
-            return 0;
-    return 1;
-}
-
 void limpa ()
 {
     while ((getchar()) != '\n');
@@ -43,8 +34,8 @@ typedef struct {
 
 int main ()
 {
-    int n, i = 0, k, lixo;
-    char N[4], j;
+    int n, i = 0, k;
+    char j;
     double mediaturma;
     tipoalunos alunos[MAX];
     

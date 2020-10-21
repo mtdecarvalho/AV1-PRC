@@ -41,9 +41,8 @@ void limpa ()
 
 int main ()
 {
-    int numpedido, qtdpedido, k;
+    int numpedido, qtdpedido;
     double val;
-    char invalido, lixo;
     char cardapio[] =
     ("\t\t __________________________________________\n"
     "\t\t|    BEM-VINDO AO CARVALHO'S FOODTRUCK!    |\n"
