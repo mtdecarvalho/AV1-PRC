@@ -68,12 +68,6 @@ int main ()
         printf("\nFrase modificada:\n\n");
         for(i = 0; frase[i] != '\0' ; i++)
         {
-            //if (i == 0)
-            //{
-            //    if (frase[i] >= 97 && frase[i] <= 122)
-            //        frase[i]-=32;
-            //}
-            //else
             if ( !isalpha(frase[i-1]) || i == 0 )
             {
                 if (frase[i] >= 97 && frase[i] <= 122)
