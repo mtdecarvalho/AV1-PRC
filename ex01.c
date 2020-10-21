@@ -23,24 +23,26 @@ void limpa ()
 
 int main ()
 {
-    int res, multiplo, i, tam;
-    char s[1000], k, j;
+    int res, i, tam, multiplo;
+    char k;
     
     do
     {
         multiplo = 0; limpartela();
         printf("Insira o numero positivo e inteiro a ser analisado: "); 
-        while (scanf(" %d", &res) != 1 )
+        while (scanf(" %d", &res) != 1 || res <= 0 )
         {
-            printf("\n\tO valor inserido eh invalido!\n"
+            limpartela();
+            printf("\tO valor inserido eh invalido!\n"
                     "\nInsira o numero positivo e inteiro a ser analisado: "); limpa();
         }
         limpa();
+        
         for (i = 1; i<=res && multiplo<1; i++)
             if (res % i == 0 && i > 1 && i < res)
                 multiplo+=1;
 
-        if (multiplo > 0 || res <= 1)
+        if (multiplo > 0 || res == 1)
             printf("\n\tO numero %d nao eh primo.\n", res);
         else
             printf("\n\tO numero %d eh primo.\n", res);
